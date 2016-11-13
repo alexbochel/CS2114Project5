@@ -1,5 +1,7 @@
 package prj5;
 
+import java.util.LinkedList;
+
 import student.TestCase;
 
 /**
@@ -10,27 +12,29 @@ import student.TestCase;
 public class SurveyTest extends TestCase{
 
     private Survey survey;
-    
+
     /**
      * Set up
      */
     public void setUp() {
-        survey = new Survey("Computer Science", "Southeast", "sports");
+        survey = new Survey("Computer Science", "Southeast", "sports",
+                new LinkedList<Song>());
     }
-    
+
     /**
      * Test
      */
     public void testSurvey()
     {
+
         assertEquals("Computer Science", survey.getMajor());
         assertEquals("Southeast", survey.getRegion());
         assertEquals("sports", survey.getHobby());
-        
+
         survey.setHobby("music");
         assertEquals("music", survey.getHobby());
-        
+
         assertEquals("Computer Science, Southeast, music", survey.toString());
     }
-    
+
 }
