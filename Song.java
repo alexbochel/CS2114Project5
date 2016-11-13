@@ -96,6 +96,24 @@ public class Song {
     }
     
     /**
+     * This is the compare method that compares the years of two songs. 
+     * @param otherSong The song compared to. 
+     * @return int Whether or not the song is greater than, less than or equal to.
+     */
+    public int compareToYear(Song otherSong) {
+        if (this.getYear() > otherSong.getYear()) {
+            return 1;
+        }
+        else if (this.getYear() < otherSong.getYear()) {
+            return -1;
+        }
+        else
+        {
+            return this.getTitle().compareTo(otherSong.getTitle());
+        }
+    }
+    
+    /**
      * This method returns the song information as a string.
      * @return String Of information for the song.  
      */
