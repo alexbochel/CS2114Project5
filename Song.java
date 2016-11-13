@@ -9,21 +9,29 @@ package prj5;
  */
 public class Song {
 
+    // The information about the songs. 
     private String songTitle;
     private String songArtist;
     private int songYear;
     private String songGenre;
-    private int likes;
-    private int dislikes;
+    private boolean liked;
+    private boolean heard;
     
     /**
      * This is the constructor for the song class. 
+     * @param title The song title. 
+     * @param artist The artist of the song. 
+     * @param year The year the song was released. 
+     * @param genre The genre of the song. 
      */
     public Song(String title, String artist, int year, String genre) {
         songTitle = title;
         songArtist = artist;
         songYear = year;
         songGenre = genre;
+        
+        liked = false;
+        heard = false;
     }
     
     /**
@@ -59,35 +67,32 @@ public class Song {
     }
     
     /**
-     * This method gets the number of likes on the song. 
-     * @return int The number of likes. 
+     * This method gets whether or not the song was liked. 
+     * @return boolean Liked for not. 
      */
-    public int getLikes() {
-        return likes;
+    public boolean getLiked() {
+        return liked;
     }
     
     /**
-     * This method gets the number of dislikes on a song. 
-     * @return int The number of dislikes. 
+     * This method gets whether or not the song was heard. 
      */
-    public int getDislikes() {
-        return dislikes;
-    }
-    
-    /**
-     * This method sets the number of dislikes on a song.
-     * @param dL Number of dislikes  
-     */
-    public void setDislikes(int dL) {
-        dislikes = dL;
+    public boolean getHeard() {
+        return heard;
     }
     
     /**
      * This method sets the number of likes for the song. 
-     * @param l Number of likes.
      */
-    public void setLikes(int l) {
-        likes += l;
+    public void setLikes() {
+        liked = true;
+    }
+    
+    /**
+     * This method sets whether or not the song was heard. 
+     */
+    public void setHeard() {
+        heard = true;
     }
     
     /**
@@ -105,20 +110,4 @@ public class Song {
         
         return build.toString();
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
 }

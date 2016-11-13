@@ -11,18 +11,21 @@ public class Survey {
     private String studentMajor;
     private String studentHobby;
     private String studentRegion;
+    private DoublyLinkedList<Song> list;
     
     /**
-     * Instantiates major, hobby and region.
+     * Instantiates major, hobby, region and the list of songs. 
      * 
-     * @param major
-     * @param hobby
-     * @param region
+     * @param major Student's major
+     * @param hobby Student's hobby
+     * @param region Students region
+     * @param temp List of songs
      */
-    public Survey(String major, String region, String hobby) {
+    public Survey(String major, String region, String hobby, DoublyLinkedList<Song> temp) {
         studentMajor = major;
         studentHobby = hobby;
         studentRegion = region;
+        list = temp;
     }
 
     /**

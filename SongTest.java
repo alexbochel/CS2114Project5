@@ -29,19 +29,12 @@ public class SongTest extends TestCase {
         assertEquals("All You Need Is Love", song.getTitle());
         assertEquals("The Beatles", song.getArtist());
         assertEquals("pop rock", song.getGenre());
-        
+
         String str = "All You Need Is Love: The Beatles, pop rock, 1967";
         assertEquals(str, song.toString());
-        
-        
-        assertEquals(0, song.getLikes());
-        assertEquals(0, song.getDislikes());
-        
-        song.setLikes(4);
-        song.setLikes(5);
-        assertEquals(9, song.getLikes());
-        
-        song.setDislikes(3);
-        assertEquals(3, song.getDislikes());
+
+        song.setLikes();
+        assertTrue(song.getLiked());
+        assertFalse(song.getHeard());
     }
 }
