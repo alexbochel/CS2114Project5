@@ -22,5 +22,37 @@ public class Song {
     public Song() {
         
     }
+    
+    /**
+     * This method gets the name of the song. 
+     * @return String The name of the song. 
+     */
+    public void getTitle() {
+        
+    }
+    
+    /**
+     * This method gets the name of the artist. 
+     * @return String The name of the artist. 
+     */
+    public void getArtist() {
+        
+    }
+    
+    /**
+     * This method gets the year the song came out. 
+     * @return String The year of the song. 
+     */
+    public void getYear() {
+        
+    }
+    
+    /**
+     * This method gets the genre of the song. 
+     * @return String The genre of the song. 
+     */
+    public void getGenre() {
+        
+    }
 
 }
