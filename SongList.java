@@ -1,6 +1,7 @@
 package prj5;
 
-import java.util.LinkedList;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * This class stores the songs and their data. 
@@ -9,29 +10,34 @@ import java.util.LinkedList;
  * @version 2016.11.12
  *
  */
-public class SongList extends DoublyLinkedList<Song> implements Iterable<Song>
-{
+public class SongList extends DoublyLinkedList<Song> implements Iterable<Song> {
+
+    private DoublyLinkedList<Song> songList;
+    
     /**
      * This is the constructor for the SongList class. 
      */
-    public SongList() 
-    {
+    public SongList() {
         super();
     }
-
+    
     /**
      * This method adds a song to the list. 
+     * @param newSong Song to be added. 
      */
-    public boolean add() 
-    {
-        return true;
+    public void addSong(Song newSong) {
+        if (newSong == null) {
+            throw new IllegalArgumentException();
+        }
+        
+        add(newSong);
     }
-
+    
     @Override
-    public Iterator<Song> iterator() 
-    {
+    public Iterator<Song> iterator() {
         return new SongIterator();
     }
+    
     /**
      * This is the iterator class for the waiting party
      * @author Purnima Ghosh
@@ -74,7 +80,5 @@ public class SongList extends DoublyLinkedList<Song> implements Iterable<Song>
                 throw new NoSuchElementException();
             }
         }
-    }
-}
-
+    } 
 }
