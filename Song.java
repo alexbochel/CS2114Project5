@@ -19,8 +19,11 @@ public class Song {
     /**
      * This is the cosntructor for the song class. 
      */
-    public Song() {
-        
+    public Song(String title, String artist, String year, String genre) {
+        songTitle = title;
+        songArtist = artist;
+        songYear = year;
+        songGenre = genre;
     }
     
     /**
@@ -70,5 +73,50 @@ public class Song {
     public int getDislikes() {
         return dislikes;
     }
+    
+    /**
+     * This method sets the number of likes for the song. 
+     */
+    public void setLikes() {
+        
+    }
+    
+    /**
+     * This method sets the number of dislikes for the song. 
+     */
+    public void setDislikes() {
+        
+    }
+    
+    /**
+     * This method returns the song information as a string.
+     * @return String Of information for the song.  
+     */
+    public String toString() {
+        StringBuilder build = new StringBuilder();
+        build.append(songTitle);
+        build.append(":");
+        build.append(" ");
+        build.append(songArtist + ",");
+        build.append(" " + songGenre + ",");
+        build.append(" " + songYear + ",");
+        
+        return build.toString();
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 }
