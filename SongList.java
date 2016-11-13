@@ -11,8 +11,6 @@ import java.util.NoSuchElementException;
  *
  */
 public class SongList extends DoublyLinkedList<Song> implements Iterable<Song> {
-
-    private DoublyLinkedList<Song> songList;
     
     /**
      * This is the constructor for the SongList class. 
@@ -61,7 +59,7 @@ public class SongList extends DoublyLinkedList<Song> implements Iterable<Song> {
         @Override
         public boolean hasNext() 
         {
-            return (index < (songList.size() - 1));
+            return (index < (size() - 1));
         }
         /**
          * This method returns the next value
