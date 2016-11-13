@@ -7,12 +7,14 @@ package prj5;
  * @version 2016.11.12
  *
  */
-public class Song {
+public class Song 
+{
 
     /**
      * This is the cosntructor for the song class. 
      */
-    public Song() {
+    public Song() 
+    {
         // TODO Auto-generated constructor stub
     }
 
