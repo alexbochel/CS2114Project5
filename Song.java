@@ -19,8 +19,7 @@ public class Song {
     /**
      * This is the constructor for the song class. 
      */
-    public Song(String title, String artist, int year, String genre) 
-    {
+    public Song(String title, String artist, int year, String genre) {
         songTitle = title;
         songArtist = artist;
         songYear = year;
@@ -31,8 +30,7 @@ public class Song {
      * This method gets the name of the song. 
      * @return String The name of the song. 
      */
-    public String getTitle() 
-    {
+    public String getTitle() {
         return songTitle;
     }
     
@@ -72,24 +70,24 @@ public class Song {
      * This method gets the number of dislikes on a song. 
      * @return int The number of dislikes. 
      */
-    public int getDislikes() 
-    {
+    public int getDislikes() {
         return dislikes;
     }
     
     /**
-     * This method sets the number of dislikes
+     * This method sets the number of dislikes on a song.
+     * @param dL Number of dislikes  
      */
-    public void setDislikes(int n)
-    {
-        dislikes += n;
+    public void setDislikes(int dL) {
+        dislikes = dL;
     }
+    
     /**
      * This method sets the number of likes for the song. 
+     * @param l Number of likes.
      */
-    public void setLikes(int n) 
-    {
-        likes += n;
+    public void setLikes(int l) {
+        likes += l;
     }
     
     /**
