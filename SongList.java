@@ -20,6 +20,14 @@ public class SongList extends DoublyLinkedList<Song> implements Iterable<Song> {
     }
     
     /**
+     * This method checks to see if the list is empty. 
+     * @return boolean whether or not isEmpty. 
+     */
+    public boolean isEmpty() {
+        return size() == 0;
+    }
+    
+    /**
      * This method adds a song to the list. 
      * @param newSong Song to be added. 
      */
