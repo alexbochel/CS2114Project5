@@ -17,7 +17,7 @@ public class Song {
     private int dislikes;
     
     /**
-     * This is the cosntructor for the song class. 
+     * This is the constructor for the song class. 
      */
     public Song(String title, String artist, int year, String genre) {
         songTitle = title;
@@ -99,7 +99,7 @@ public class Song {
         build.append(" ");
         build.append(songArtist + ",");
         build.append(" " + songGenre + ",");
-        build.append(" " + songYear + ",");
+        build.append(" " + songYear);
         
         return build.toString();
     }
