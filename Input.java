@@ -4,7 +4,7 @@ package prj5;
 * poop <- Bad purnima
 **/
 public class Input {
-    public static void main(String[] args)
+    public static void main(String[] args, String[] args2)
     {
         
     }
