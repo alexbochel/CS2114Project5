@@ -1,5 +1,7 @@
 package prj5;
 
+import java.util.LinkedList;
+
 /**
  * Survey class
  * @author omarjas5
@@ -11,21 +13,22 @@ public class Survey {
     private String studentMajor;
     private String studentHobby;
     private String studentRegion;
-    private DoublyLinkedList<Song> list;
+    public DoublyLinkedList<Song> list;
     
     /**
-     * Instantiates major, hobby, region and the list of songs. 
+     * Instantiates major, hobby and region.
      * 
-     * @param major Student's major
-     * @param hobby Student's hobby
-     * @param region Students region
-     * @param temp List of songs
+     * @param major
+     * @param hobby
+     * @param region
+     * @param songList
      */
-    public Survey(String major, String region, String hobby, DoublyLinkedList<Song> temp) {
+    public Survey
+    (String major, String region, String hobby, DoublyLinkedList<Song> songList) {
         studentMajor = major;
         studentHobby = hobby;
         studentRegion = region;
-        list = temp;
+        list = songList;
     }
 
     /**
@@ -70,6 +73,10 @@ public class Survey {
         this.studentRegion = studentRegion;
     }
     
+    /**
+     * 
+     * @return string
+     */
     public String toString()
     {
         return studentMajor + ", " + studentRegion + ", " + studentHobby;

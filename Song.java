@@ -9,20 +9,15 @@ package prj5;
  */
 public class Song {
 
-    // The information about the songs. 
     private String songTitle;
     private String songArtist;
     private int songYear;
     private String songGenre;
-    private boolean liked;
+    private boolean likes;
     private boolean heard;
     
     /**
      * This is the constructor for the song class. 
-     * @param title The song title. 
-     * @param artist The artist of the song. 
-     * @param year The year the song was released. 
-     * @param genre The genre of the song. 
      */
     public Song(String title, String artist, int year, String genre) {
         songTitle = title;
@@ -30,7 +25,7 @@ public class Song {
         songYear = year;
         songGenre = genre;
         
-        liked = false;
+        likes = false;
         heard = false;
     }
     
@@ -67,15 +62,16 @@ public class Song {
     }
     
     /**
-     * This method gets whether or not the song was liked. 
-     * @return boolean Liked for not. 
+     * This method gets the number of likes on the song. 
+     * @return int The number of likes. 
      */
-    public boolean getLiked() {
-        return liked;
+    public boolean getLikes() {
+        return likes;
     }
     
     /**
-     * This method gets whether or not the song was heard. 
+     * This method gets the number of dislikes on a song. 
+     * @return int The number of dislikes. 
      */
     public boolean getHeard() {
         return heard;
@@ -85,32 +81,14 @@ public class Song {
      * This method sets the number of likes for the song. 
      */
     public void setLikes() {
-        liked = true;
+        likes = true;
     }
     
     /**
-     * This method sets whether or not the song was heard. 
+     * This method sets the number of dislikes for the song. 
      */
     public void setHeard() {
         heard = true;
-    }
-    
-    /**
-     * This is the compare method that compares the years of two songs. 
-     * @param otherSong The song compared to. 
-     * @return int Whether or not the song is greater than, less than or equal to.
-     */
-    public int compareToYear(Song otherSong) {
-        if (this.getYear() > otherSong.getYear()) {
-            return 1;
-        }
-        else if (this.getYear() < otherSong.getYear()) {
-            return -1;
-        }
-        else
-        {
-            return this.getTitle().compareTo(otherSong.getTitle());
-        }
     }
     
     /**
@@ -128,4 +106,20 @@ public class Song {
         
         return build.toString();
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
 }

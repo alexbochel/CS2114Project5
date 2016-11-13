@@ -2,17 +2,16 @@ package prj5;
 
 import student.TestCase;
 /**
- * This test class tests the Song class. 
  * 
  * @author omar
- * @version 2016.11.13
+ * @version
  */
 public class SongTest extends TestCase {
     
     private Song song;
     
     /**
-     * This is the setup method for the SongTest. 
+     * Set up
      */
     public void setUp()
     {
@@ -21,7 +20,7 @@ public class SongTest extends TestCase {
     }
     
     /**
-     * This tests all of the methods for song class. 
+     * Test 
      */
     public void testSong()
     {
@@ -29,12 +28,12 @@ public class SongTest extends TestCase {
         assertEquals("All You Need Is Love", song.getTitle());
         assertEquals("The Beatles", song.getArtist());
         assertEquals("pop rock", song.getGenre());
-
+        
         String str = "All You Need Is Love: The Beatles, pop rock, 1967";
         assertEquals(str, song.toString());
-
+        
         song.setLikes();
-        assertTrue(song.getLiked());
+        assertTrue(song.getLikes());
         assertFalse(song.getHeard());
     }
 }

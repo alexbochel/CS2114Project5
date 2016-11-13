@@ -1,10 +1,11 @@
 package prj5;
 
+import java.util.LinkedList;
+
 import student.TestCase;
 
 /**
- * This test class tests the Survey class. 
- * 
+ * Survey test class
  * @author omarjas5
  * @version 2016.11.13
  */
@@ -13,18 +14,20 @@ public class SurveyTest extends TestCase{
     private Survey survey;
     
     /**
-     * This is the setUp method for the test class.
+     * Set up
      */
     public void setUp() {
-        survey = new Survey("Computer Science", "Southeast", "sports",
+        survey = new Survey("Computer Science", "Southeast", "sports", 
                 new DoublyLinkedList<Song>());
+        
     }
     
     /**
-     * This tests all of the survey class methods.  
+     * Test
      */
     public void testSurvey()
     {
+        
         assertEquals("Computer Science", survey.getMajor());
         assertEquals("Southeast", survey.getRegion());
         assertEquals("sports", survey.getHobby());
