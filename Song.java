@@ -11,7 +11,7 @@ public class Song {
 
     private String songTitle;
     private String songArtist;
-    private String songYear;
+    private int songYear;
     private String songGenre;
     private int likes;
     private int dislikes;
@@ -19,7 +19,7 @@ public class Song {
     /**
      * This is the cosntructor for the song class. 
      */
-    public Song(String title, String artist, String year, String genre) {
+    public Song(String title, String artist, int year, String genre) {
         songTitle = title;
         songArtist = artist;
         songYear = year;
@@ -46,7 +46,7 @@ public class Song {
      * This method gets the year the song came out. 
      * @return String The year of the song. 
      */
-    public String getYear() {
+    public int getYear() {
         return songYear;
     }
     
