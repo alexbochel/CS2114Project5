@@ -75,17 +75,18 @@ public class Song {
     }
     
     /**
-     * This method sets the number of likes for the song. 
+     * This method gets the number of dislikes on a song. 
+     * @return int The number of dislikes. 
      */
-    public void setLikes() {
-        
+    public int getDislikes() {
+        return dislikes;
     }
     
     /**
-     * This method sets the number of dislikes for the song. 
+     * This method sets the number of likes for the song. 
      */
-    public void setDislikes() {
-        
+    public void setLikes(int l) {
+        likes += l;
     }
     
     /**
