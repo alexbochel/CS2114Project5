@@ -78,7 +78,12 @@ public class Song {
     }
     
     /**
-    
+     * This method sets the number of dislikes
+     */
+    public void setDislikes(int n)
+    {
+        dislikes += n;
+    }
     /**
      * This method sets the number of likes for the song. 
      */
