@@ -7,15 +7,20 @@ package prj5;
  * @version 2016.11.12
  *
  */
-public class Song 
-{
+public class Song {
 
+    private String songTitle;
+    private String songArtist;
+    private String songYear;
+    private String songGenre;
+    private int likes;
+    private int dislikes;
+    
     /**
-     * This is the constructor for the song class. 
+     * This is the cosntructor for the song class. 
      */
-    public Song() 
-    {
-        // TODO Auto-generated constructor stub
+    public Song() {
+        
     }
 
 }
