@@ -9,18 +9,14 @@ import java.util.LinkedList;
  * @version 2016.11.12
  *
  */
-public class SongList {
-
-    public class SongList extends DoublyLinkedList<Song> implements Iterable<Song>
+public class SongList extends DoublyLinkedList<Song> implements Iterable<Song>
 {
-    private DoublyLinkedList<Song> songList;
-
     /**
      * This is the constructor for the SongList class. 
      */
     public SongList() 
     {
-        songList = new DoublyLinkedList<Song>();
+        super();
     }
 
     /**
