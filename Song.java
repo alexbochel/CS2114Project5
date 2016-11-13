@@ -27,32 +27,48 @@ public class Song {
      * This method gets the name of the song. 
      * @return String The name of the song. 
      */
-    public void getTitle() {
-        
+    public String getTitle() {
+        return songTitle;
     }
     
     /**
      * This method gets the name of the artist. 
      * @return String The name of the artist. 
      */
-    public void getArtist() {
-        
+    public String getArtist() {
+        return songArtist;
     }
     
     /**
      * This method gets the year the song came out. 
      * @return String The year of the song. 
      */
-    public void getYear() {
-        
+    public String getYear() {
+        return songYear;
     }
     
     /**
      * This method gets the genre of the song. 
      * @return String The genre of the song. 
      */
-    public void getGenre() {
-        
+    public String getGenre() {
+        return songGenre;
+    }
+    
+    /**
+     * This method gets the number of likes on the song. 
+     * @return int The number of likes. 
+     */
+    public int getLikes() {
+        return likes;
+    }
+    
+    /**
+     * This method gets the number of dislikes on a song. 
+     * @return int The number of dislikes. 
+     */
+    public int getDislikes() {
+        return dislikes;
     }
 
 }
