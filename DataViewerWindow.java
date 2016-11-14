@@ -14,6 +14,7 @@ import CS2114.WindowSide;
 /**
  * @author Purnima Ghosh
  * @version 11.13.2016
+ * This class displays the data for the Music Survey
  */
 public class DataViewerWindow 
 {
@@ -37,7 +38,10 @@ public class DataViewerWindow
     private Shape towerSeven;
     private Shape towerEight;
     private Shape towerNine;
-    
+    /**
+     * Constructor that initializes all of the buttons and some of the 
+     * static shapes for the window
+     */
     public DataViewerWindow()
     {
         
@@ -121,6 +125,9 @@ public class DataViewerWindow
         //Add Legend
         legendMaker();
     }
+    /**
+     * This method creates all of the bars that represent data from the survey
+     */
     public void shapeCreator()
     {
         Shape readBar = new Shape(window.getWidth()/3 - 50,
@@ -137,6 +144,9 @@ public class DataViewerWindow
         window.addShape(musicBar);
         window.moveToFront(towerOne);
     }
+    /**
+     * This method creates a legend based on which criteria is being looked at
+     */
     public void legendMaker()
     {
         Shape legend = new Shape(window.getWidth() + 100, 
