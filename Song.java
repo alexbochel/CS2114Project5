@@ -125,7 +125,39 @@ public class Song
     }
 
 
-
+    /**
+     * This is the compareTo method for the song title.
+     * @param otherSong The other song being compared to. 
+     */
+    public int compareToTitle(Song otherSong) {
+        if (this.getTitle().compareTo(otherSong.getTitle()) > 0) {
+            return 1;
+        }
+        if (this.getTitle().compareTo(otherSong.getTitle()) < 0) {
+            return -1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+    
+    /**
+     * This is the compareTo method for the song genre.
+     * @param otherSong The other song being compared to. 
+     */
+    public int compareToGenre(Song otherSong) {
+        if (this.getGenre().compareTo(otherSong.getGenre()) > 0) {
+            return 1;
+        }
+        if (this.getGenre().compareTo(otherSong.getGenre()) < 0) {
+            return -1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
 
 
 
