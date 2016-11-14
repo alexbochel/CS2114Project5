@@ -1,74 +1,194 @@
 package prj5;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class SongCreator {
-    
-    private DoublyLinkedList<Song> songList;
     private SurveyList surveyList;
-    private Scanner key;
     private Scanner dataKey;
-    
-    public SongCreator()
-    {
-        songList = new DoublyLinkedList<Song>();
+    private String file;
+    private String fileData;
+
+    public SongCreator(String fileName, String dataFile) {
         surveyList = new SurveyList();
+        file = fileName;
+        fileData = dataFile;
     }
-    
-    public void addSongs(String songL, String dataList)
-    {
-        try
-        {
-            key = new Scanner(songL);
-            dataKey = new Scanner(dataList);
-        }
-        catch (Exception e)
-        {
-            if (e instanceof FileNotFoundException)
-            {
+
+    /**
+     *
+     * @param dataList
+     */
+    public void addSurveys() {
+
+        try {
+            dataKey = new Scanner(new File(fileData));
+        } catch (Exception e) {
+            if (e instanceof FileNotFoundException) {
                 e.printStackTrace();
                 System.exit(0);
             }
         }
-        
-        key.nextLine();
-        while (key.hasNextLine())
-        {
-            String[] songSplit = key.nextLine().split("* ,*");
-            songList.add(new Song(songSplit[0], songSplit[1], 
-                    Integer.valueOf(songSplit[2]), songSplit[3]));
-        }
-        key.close();
-        
-        while (dataKey.hasNextLine())
-        {
-            key.nextLine();
-            String[] dataSplit = key.nextLine().split("* ,*");
-            
-            surveyList.add(new Survey(dataSplit[2], dataSplit[3], dataSplit[4], songList));
-            
-            for (int i = 0; i < surveyList.size(); i++)
-            {
-                for (int j = 5; j < dataSplit.length - 1; j++)
-                {
-                    if (j % 2 == 0)
-                    {
-                        if (dataSplit[j].equals("Yes"))
-                        {
-                            surveyList.get(i).list.get(j).setLikes();
-                        }
+
+        dataKey.nextLine();
+        int i = 0;
+        while (dataKey.hasNextLine()) {
+
+            String[] dataSplit = dataKey.nextLine().split(",");
+            surveyList.add(new Survey(dataSplit[2], dataSplit[3], dataSplit[4],
+                    new SongList(file)));
+
+            int k = 0;
+
+            for (int j = 5; j < dataSplit.length; j++) {
+
+                if (j % 2 == 0) {
+                    if (dataSplit[j].equals("Yes")) {
+                        surveyList.get(i).getList().get(k).setLikes();
                     }
-                    else
-                    {
-                        if (dataSplit[j].equals("Yes"))
-                        {
-                            surveyList.get(i).list.get(j).setHeard();
-                        }
+                }
+                else {
+                    if (dataSplit[j].equals("Yes")) {
+                        surveyList.get(i).getList().get(k).setHeard();
+
+                    }
+
+                    k--;
+
+                }
+
+                k++;
+            }
+            i++;
+        }
+
+        dataKey.close();
+    }
+
+    public void calculate() {
+        int sport = 0;
+        int sportLikes = 0;
+        int sportHeard = 0;
+        int music = 0;
+        int musicLikes = 0;
+        int musicHeard = 0;
+        int reading = 0;
+        int readingLikes = 0;
+        int readingHeard = 0;
+        int art = 0;
+        int artLikes = 0;
+        int artHeard = 0;
+
+        for (int i = 0; i < surveyList.size(); i++) {
+
+            Survey s = surveyList.get(i);
+
+            String hobby = s.getHobby();
+
+            switch (hobby) {
+            case "sports":
+                sport++;
+                break;
+            case "reading":
+                reading++;
+                break;
+            case "music":
+                music++;
+                break;
+            case "art":
+                art++;
+                break;
+            default:
+                break;
+            }
+
+            for (int j = 0; j < s.getList().size(); j++) {
+
+                if (s.getList().get(j).getHeard()) {
+                    switch (hobby) {
+                    case "sports":
+                        sportHeard++;
+                        break;
+                    case "reading":
+                        readingHeard++;
+                        break;
+                    case "music":
+                        musicHeard++;
+                        break;
+                    case "art":
+                        artHeard++;
+                        break;
+                    default:
+                        break;
+                    }
+                }
+                if (s.getList().get(j).getLikes()) {
+                    switch (hobby) {
+                    case "sports":
+                        sportLikes += 1;
+                        break;
+                    case "reading":
+                        readingLikes += 1;
+                        break;
+                    case "music":
+                        musicLikes += 1;
+                        break;
+                    case "art":
+                        artLikes += 1;
+                        break;
+                    default:
+                        break;
                     }
                 }
             }
         }
-        
+
+        if (sport == 0) {
+            sportLikes = 0;
+            sportHeard = 0;
+        }
+        else {
+            sportLikes = (int) ((double) sportLikes / sport * 100);
+            sportHeard = (int) ((double) sportHeard / sport * 100);
+        }
+        if (reading == 0) {
+            readingLikes = 0;
+            readingHeard = 0;
+        }
+        else {
+            readingLikes = (int) ((double) readingLikes / reading * 100);
+            readingHeard = (int) ((double) readingHeard / reading * 100);
+        }
+        if (music == 0) {
+            musicLikes = 0;
+            musicHeard = 0;
+        }
+        else {
+            musicLikes = (int) ((double) musicLikes / music * 100);
+            musicHeard = (int) ((double) musicHeard / music * 100);
+        }
+        if (art == 0) {
+            artLikes = 0;
+            artHeard = 0;
+        }
+        else {
+            artLikes = (int) ((double) artLikes / art * 100);
+            artHeard = (int) ((double) artHeard / art * 100);
+        }
+
+        for (int i = 0; i < surveyList.get(0).getList().size() ; i++) {
+            System.out.println(surveyList.get(0).getList().get(i).toString());
+            System.out.println("heard");
+            System.out.println("reading" + readingHeard + " art" + artHeard
+                    + " sports" + sportHeard + " music" + musicHeard);
+            System.out.println("likes");
+            System.out.println("reading" + readingLikes + " art" + artLikes
+                    + " sports" + sportLikes + " music" + musicLikes);
+        }
+    }
+
+    public SurveyList getSurveyList() {
+        return surveyList;
     }
 }
