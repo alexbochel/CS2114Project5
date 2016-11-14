@@ -7,7 +7,8 @@ package prj5;
  * @version 2016.11.12
  *
  */
-public class Song {
+public class Song 
+{
 
     private String songTitle;
     private String songArtist;
@@ -19,7 +20,8 @@ public class Song {
     /**
      * This is the constructor for the song class.
      */
-    public Song(String title, String artist, int year, String genre) {
+    public Song(String title, String artist, int year, String genre) 
+    {
         songTitle = title;
         songArtist = artist;
         songYear = year;
@@ -33,7 +35,8 @@ public class Song {
      * This method gets the name of the song.
      * @return String The name of the song.
      */
-    public String getTitle() {
+    public String getTitle() 
+    {
         return songTitle;
     }
 
@@ -41,7 +44,8 @@ public class Song {
      * This method gets the name of the artist.
      * @return String The name of the artist.
      */
-    public String getArtist() {
+    public String getArtist() 
+    {
         return songArtist;
     }
 
@@ -49,7 +53,8 @@ public class Song {
      * This method gets the year the song came out.
      * @return String The year of the song.
      */
-    public int getYear() {
+    public int getYear() 
+    {
         return songYear;
     }
 
@@ -57,7 +62,8 @@ public class Song {
      * This method gets the genre of the song.
      * @return String The genre of the song.
      */
-    public String getGenre() {
+    public String getGenre() 
+    {
         return songGenre;
     }
 
@@ -65,7 +71,8 @@ public class Song {
      * This method gets the number of likes on the song.
      * @return int The number of likes.
      */
-    public boolean getLikes() {
+    public boolean getLikes() 
+    {
         return likes;
     }
 
@@ -73,21 +80,24 @@ public class Song {
      * This method gets the number of dislikes on a song.
      * @return int The number of dislikes.
      */
-    public boolean getHeard() {
+    public boolean getHeard() 
+    {
         return heard;
     }
 
     /**
      * This method sets the number of likes for the song.
      */
-    public void setLikes() {
+    public void setLikes() 
+    {
         likes = true;
     }
 
     /**
      * This method sets the number of dislikes for the song.
      */
-    public void setHeard() {
+    public void setHeard() 
+    {
         heard = true;
     }
 
@@ -95,7 +105,8 @@ public class Song {
      * This method returns the song information as a string.
      * @return String Of information for the song.
      */
-    public String toString() {
+    public String toString() 
+    {
         /**
         StringBuilder build = new StringBuilder();
         build.append(songTitle);
