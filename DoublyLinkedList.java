@@ -8,6 +8,7 @@ package prj5;
  * @version 11.13.2016
  * This class creates a doubly linked list that can be used to create a 
  * list for either songs or people
+ * @param <T>   is the generic type
  */
 public class DoublyLinkedList<T> 
 {
@@ -107,6 +108,7 @@ public class DoublyLinkedList<T>
     /**
      * This method tells when the given object is in the list
      * @param obj the object is being searched for
+     * @return true if the list contains the object
      */
     public boolean contains(T obj) 
     {

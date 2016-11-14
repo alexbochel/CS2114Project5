@@ -2,16 +2,17 @@ package prj5;
 
 import student.TestCase;
 /**
- *
- * @author omar
- * @version
+ * This is a test class for the song class
+ * @author Omar Jastaniah - omarjas5
+ * @version 2016.11.14
  */
-public class SongTest extends TestCase {
+public class SongTest extends TestCase 
+{
 
     private Song song;
 
     /**
-     * Set up
+     * Instantiates new song object for testing.
      */
     public void setUp()
     {
@@ -20,7 +21,7 @@ public class SongTest extends TestCase {
     }
 
     /**
-     * Test
+     * Test the song getter and setter methods
      */
     public void testSong()
     {

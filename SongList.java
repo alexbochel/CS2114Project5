@@ -57,6 +57,42 @@ public class SongList extends DoublyLinkedList<Song> implements Iterable<Song> {
         }
         super.add(newSong);
     }
+    
+    /**
+     * This is a selection sort method that will sort the song by title.
+     */
+    public void sortTitle() {
+        for (int i = 0; i < super.size() - 1; i++) {
+
+            for (int j = i - 1; j >= 0; j--) {                
+                if (super.get(j).compareToTitle(super.get(i)) > 0) {
+                    
+                    Song song = super.get(i);
+                    
+                    super.add(j, super.remove(song));
+
+                }
+            }
+        }
+    }
+    
+    /**
+     * This is a selection sort method that will sort the song by genre.
+     */
+    public void sortGenre() {
+        for (int i = 0; i < super.size() - 1; i++) {
+
+            for (int j = i - 1; j >= 0; j--) {                
+                if (super.get(j).compareToTitle(super.get(i)) > 0) {
+                    
+                    Song song = super.get(i);
+                    
+                    super.add(j, super.remove(song));
+
+                }
+            }
+        }
+    }
 
     /**
      * This song creates a new Iterator for Songs

@@ -25,7 +25,11 @@ public class SurveyTest extends TestCase{
     }
 
     /**
+<<<<<<< HEAD
      * Test methods in Survey class
+=======
+     * Tests the survey setter and getter methods
+>>>>>>> origin/master
      */
     public void testSurvey()
     {
