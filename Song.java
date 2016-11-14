@@ -21,7 +21,7 @@ public class Song
     private int readingTotalHeard;
     private int readingTotalLiked;
     private int readingHeard;
-    private int readingLike;
+    private int readingLiked;
     private int sportsTotalHeard;
     private int sportsTotalLiked;
     private int sportsHeard;
@@ -48,7 +48,7 @@ public class Song
         readingTotalHeard = 0;
         readingTotalLiked = 0;
         readingHeard = 0;
-        readingLike = 0;
+        readingLiked = 0;
         sportsTotalHeard = 0;
         sportsTotalLiked = 0;
         sportsHeard = 0;
@@ -177,8 +177,8 @@ public class Song
      * This gets the likes for reading. 
      * @return the readingLike
      */
-    public int getReadingLike() {
-        return readingLike;
+    public int getReadingLiked() {
+        return readingLiked;
     }
 
     /**
@@ -186,7 +186,7 @@ public class Song
      * @param readingLike the readingLike to set
      */
     public void setReadingLike(int readingLike) {
-        this.readingLike = readingLike;
+        this.readingLiked = readingLike;
     }
 
     /**
@@ -402,7 +402,7 @@ public class Song
      * This method adds heards to the song. 
      * @param hobby
      */
-    public void addHeard(String hobby)
+    public void heard(String hobby)
     {
         switch (hobby)
         {
@@ -431,7 +431,7 @@ public class Song
      * This method adds not heard to the song. 
      * @param hobby
      */
-    public void addNotHeard(String hobby)
+    public void notHeard(String hobby)
     {
         switch(hobby)
         {
@@ -456,7 +456,7 @@ public class Song
      * This method adds likes to the song. 
      * @param hobby
      */
-    public void addLikes(String hobby)
+    public void liked(String hobby)
     {
         switch(hobby)
         {
@@ -465,7 +465,7 @@ public class Song
             artTotalLiked++;
             break;
         case "reading":
-            readingLike++;
+            readingLiked++;
             readingTotalLiked++;
             break;
         case "sports":
@@ -485,7 +485,7 @@ public class Song
      * This method adds notLike to the song. 
      * @param hobby
      */
-    public void addNotLike(String hobby)
+    public void notLiked(String hobby)
     {
         switch(hobby)
         {
