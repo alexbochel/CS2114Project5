@@ -12,23 +12,54 @@ public class Song
 
     private String songTitle;
     private String songArtist;
-    private int songYear;
+    private String songYear;
     private String songGenre;
-    private boolean likes;
-    private boolean heard;
+    private int artTotalHeard;
+    private int artTotalLiked;
+    private int artHeard;
+    private int artLiked;
+    private int readingTotalHeard;
+    private int readingTotalLiked;
+    private int readingHeard;
+    private int readingLike;
+    private int sportsTotalHeard;
+    private int sportsTotalLiked;
+    private int sportsHeard;
+    private int sportsLiked;
+    private int musicTotalHeard;
+    private int musicTotalLiked;
+    private int musicHeard;
+    private int musicLiked;
+
+
+
 
     /**
      * This is the constructor for the song class.
      */
-    public Song(String title, String artist, int year, String genre) 
+    public Song() 
     {
-        songTitle = title;
-        songArtist = artist;
-        songYear = year;
-        songGenre = genre;
+        songTitle = new String();
+        songArtist = new String();
+        songYear = new String();
+        songGenre = new String();
 
-        likes = false;
-        heard = false;
+        artTotalHeard = 0;
+        artTotalLiked = 0;
+        artHeard = 0;
+        artLiked = 0;
+        readingTotalHeard = 0;
+        readingTotalLiked = 0;
+        readingHeard = 0;
+        readingLike = 0;
+        sportsTotalHeard = 0;
+        sportsTotalLiked = 0;
+        sportsHeard = 0;
+        sportsLiked = 0;
+        musicTotalHeard = 0;
+        musicTotalLiked = 0;
+        musicHeard = 0;
+        musicLiked = 0;
     }
 
     /**
@@ -115,60 +146,99 @@ public class Song
         build.append(songArtist + ",");
         build.append(" " + songGenre + ",");
         build.append(" " + songYear);
-
         return build.toString();
-        **/
+         **/
 
         return "song title " + getTitle().toLowerCase() + "\n" +
-            "song artist " + getArtist().toLowerCase() + "\n" + "song genre " +
-            getGenre().toLowerCase() + "\n" + "song year " + getYear();
+        "song artist " + getArtist().toLowerCase() + "\n" + "song genre " +
+        getGenre().toLowerCase() + "\n" + "song year " + getYear();
     }
-
-
-    /**
-     * This is the compareTo method for the song title.
-     * @param otherSong The other song being compared to. 
-     */
-    public int compareToTitle(Song otherSong) {
-        if (this.getTitle().compareTo(otherSong.getTitle()) > 0) {
-            return 1;
-        }
-        if (this.getTitle().compareTo(otherSong.getTitle()) < 0) {
-            return -1;
-        }
-        else
+    public void addHeard(String hobby)
+    {
+        switch (hobby)
         {
-            return 0;
+        case "art":
+            artHeard++;
+            artTotalHeard++;
+            break;
+        case "reading":
+            readingHeard++;
+            readingTotalHeard++;
+            break;
+        case "sports":
+            sportsHeard++;
+            sportsTotalHeard++;
+            break;
+        case "music":
+            musicHeard++;
+            musicTotalHeard++;
+            break;
+        default:
+            throw new IllegalStateException("Not one of the possible options");
         }
     }
-    
-    /**
-     * This is the compareTo method for the song genre.
-     * @param otherSong The other song being compared to. 
-     */
-    public int compareToGenre(Song otherSong) {
-        if (this.getGenre().compareTo(otherSong.getGenre()) > 0) {
-            return 1;
-        }
-        if (this.getGenre().compareTo(otherSong.getGenre()) < 0) {
-            return -1;
-        }
-        else
+    public void addNotHeard(String hobby)
+    {
+        switch(hobby)
         {
-            return 0;
+        case "art":
+            artTotalHeard++;
+            break;
+        case "reading":
+            readingTotalHeard++;
+            break;
+        case "sports":
+            sportsTotalHeard++;
+            break;
+        case "music":
+            musicTotalHeard++;
+            break;
+        default:
+            throw new IllegalStateException("Not one of the possible options");
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public void addLikes(String hobby)
+    {
+        switch(hobby)
+        {
+        case "art":
+            artLiked++;
+            artTotalLiked++;
+            break;
+        case "reading":
+            readingLike++;
+            readingTotalLiked++;
+            break;
+        case "sports":
+            sportsLiked++;
+            sportsTotalLiked++;
+            break;
+        case "music":
+            musicLiked++;
+            musicTotalLiked++;
+            break;
+        default:
+            throw new IllegalStateException("Not one of the possible options");
+        }
+    }
+    public void addNotLike(String hobby)
+    {
+        switch(hobby)
+        {
+        case "art":
+            artTotalLiked++;
+            break;
+        case "reading":
+            readingTotalLiked++;
+            break;
+        case "sports":
+            sportsTotalLiked++;
+            break;
+        case "music":
+            musicTotalLiked++;
+            break;
+        default:
+            throw new IllegalStateException("Not one of the possible options");
+        }
+    }
 }
