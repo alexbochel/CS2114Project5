@@ -12,22 +12,27 @@ import java.util.Scanner;
 /**
  * @author Purnima Ghosh
  * @version 11.13.2016
- *
+ * This class creates a Song List as a DoublyLinkedList that can be iterated through
  */
 public class SongList extends DoublyLinkedList<Song> implements Iterable<Song> {
 
     private Scanner key;
     /**
      * This is the constructor for the SongList class.
+     * @param file is the file being scanned by the SongList
      */
-    public SongList(String file) {
+    public SongList(String file) 
+    {
         super();
 
-        try {
-
+        try 
+        {
             key = new Scanner(new File(file));
-        } catch (Exception e) {
-            if (e instanceof FileNotFoundException) {
+        } 
+        catch (Exception e) 
+        {
+            if (e instanceof FileNotFoundException) 
+            {
                 e.printStackTrace();
                 System.exit(0);
             }
@@ -44,6 +49,7 @@ public class SongList extends DoublyLinkedList<Song> implements Iterable<Song> {
 
     /**
      * This method adds a song to the list.
+     * @param newSong the song being added to the songList
      */
     public void add(Song newSong) {
         if (newSong == null) {
@@ -52,19 +58,25 @@ public class SongList extends DoublyLinkedList<Song> implements Iterable<Song> {
         super.add(newSong);
     }
 
+    /**
+     * This song creates a new Iterator for Songs
+     * @return Iterator<Song> an iterator that can move through the list
+     */
     @Override
-    public Iterator<Song> iterator() {
+    public Iterator<Song> iterator() 
+    {
         return new SongIterator();
     }
 
     /**
-     * This is the iterator class for the waiting party
+     * This is the iterator class for the Song List class
      *
      * @author Purnima Ghosh
      * @version 11.02.2016
      *
      */
-    private class SongIterator implements Iterator<Song> {
+    private class SongIterator implements Iterator<Song> 
+    {
         private int index;
         private Song song;
 
@@ -87,12 +99,16 @@ public class SongList extends DoublyLinkedList<Song> implements Iterable<Song> {
          * This method returns the next value
          */
         @Override
-        public Song next() {
-            if (hasNext()) {
+        public Song next() 
+        {
+            if (hasNext()) 
+            {
                 song = get(index + 1);
                 index++;
                 return song;
-            } else {
+            } 
+            else 
+            {
                 throw new NoSuchElementException();
             }
         }
