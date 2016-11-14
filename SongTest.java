@@ -3,8 +3,8 @@ package prj5;
 import student.TestCase;
 /**
  * This is a test class for the song class
- * @author omar
- * @version
+ * @author Omar Jastaniah - omarjas5
+ * @version 2016.11.14
  */
 public class SongTest extends TestCase 
 {
@@ -12,7 +12,7 @@ public class SongTest extends TestCase
     private Song song;
 
     /**
-     * Set up
+     * Instantiates new song object for testing.
      */
     public void setUp()
     {
