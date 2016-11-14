@@ -23,7 +23,7 @@ public class SurveyTest extends TestCase{
     }
     
     /**
-     * Test
+     * Tests the survey setter and getter methods
      */
     public void testSurvey()
     {
