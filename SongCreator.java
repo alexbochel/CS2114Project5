@@ -3,24 +3,33 @@ package prj5;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-
-public class SongCreator {
+/**
+ * This class scans in the information from the music survey
+ */
+public class SongCreator 
+{
     private SurveyList surveyList;
     private Scanner dataKey;
     private String file;
     private String fileData;
 
-    public SongCreator(String fileName, String dataFile) {
+    /**
+     * This method scans in the survey information from the survey
+     * @param fileName is the name of the file being imported
+     * @param dataFile is the data from the file being imported
+     */
+    public SongCreator(String fileName, String dataFile) 
+    {
         surveyList = new SurveyList();
         file = fileName;
         fileData = dataFile;
     }
 
     /**
-     *
-     * @param dataList
+     * This method parses through the file and makes the data readable
      */
-    public void addSurveys() {
+    public void addSurveys() 
+    {
 
         try {
             dataKey = new Scanner(new File(fileData));
@@ -65,8 +74,13 @@ public class SongCreator {
 
         dataKey.close();
     }
-
-    public void calculate() {
+   
+    /**
+     * This method calculates the dislikes, likes, and 
+     * heards for different hobbies
+     */
+    public void calculate() 
+    {
         int sport = 0;
         int sportLikes = 0;
         int sportHeard = 0;
@@ -80,7 +94,8 @@ public class SongCreator {
         int artLikes = 0;
         int artHeard = 0;
 
-        for (int i = 0; i < surveyList.size(); i++) {
+        for (int i = 0; i < surveyList.size(); i++) 
+        {
 
             Survey s = surveyList.get(i);
 
@@ -103,7 +118,8 @@ public class SongCreator {
                 break;
             }
 
-            for (int j = 0; j < s.getList().size(); j++) {
+            for (int j = 0; j < s.getList().size(); j++) 
+            {
 
                 if (s.getList().get(j).getHeard()) {
                     switch (hobby) {
@@ -123,7 +139,8 @@ public class SongCreator {
                         break;
                     }
                 }
-                if (s.getList().get(j).getLikes()) {
+                if (s.getList().get(j).getLikes()) 
+                {
                     switch (hobby) {
                     case "sports":
                         sportLikes += 1;
@@ -187,8 +204,13 @@ public class SongCreator {
                     + " sports" + sportLikes + " music" + musicLikes);
         }
     }
-
-    public SurveyList getSurveyList() {
+    
+    /**
+     * This method returns the survey list
+     * @return surveyList a doubly linked list with survey data
+     */
+    public SurveyList getSurveyList() 
+    {
         return surveyList;
     }
 }
