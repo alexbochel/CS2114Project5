@@ -63,14 +63,13 @@ public class SongList extends DoublyLinkedList<Song> implements Iterable<Song> {
      */
     public void sortTitle() {
         for (int i = 0; i < super.size() - 1; i++) {
-            int bigIndex = 0;
-            for (int j = 1; j < super.size(); j++) {                
+
+            for (int j = i - 1; j >= 0; j--) {                
                 if (super.get(j).compareToTitle(super.get(i)) > 0) {
+                    
                     Song song = super.get(i);
                     
-                    bigIndex = j;
-                    
-                    super.add(bigIndex, super.remove(song));
+                    super.add(j, super.remove(song));
 
                 }
             }
@@ -82,14 +81,13 @@ public class SongList extends DoublyLinkedList<Song> implements Iterable<Song> {
      */
     public void sortGenre() {
         for (int i = 0; i < super.size() - 1; i++) {
-            int bigIndex = 0;
-            for (int j = 1; j < super.size(); j++) {                
+
+            for (int j = i - 1; j >= 0; j--) {                
                 if (super.get(j).compareToTitle(super.get(i)) > 0) {
+                    
                     Song song = super.get(i);
                     
-                    bigIndex = j;
-                    
-                    super.add(bigIndex, super.remove(song));
+                    super.add(j, super.remove(song));
 
                 }
             }
