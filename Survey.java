@@ -32,6 +32,7 @@ public class Survey {
     }
 
     /**
+     * This method returns the student's major
      * @return the studentMajor
      */
     public String getMajor() {
@@ -39,6 +40,7 @@ public class Survey {
     }
 
     /**
+     * This method sets the student's major
      * @param studentMajor the studentMajor to set
      */
     public void setMajor(String studentMajor) {
@@ -46,6 +48,7 @@ public class Survey {
     }
 
     /**
+     * This method return the student's hobby
      * @return the studentHobby
      */
     public String getHobby() {
@@ -53,6 +56,7 @@ public class Survey {
     }
 
     /**
+     * This method sets the student's hobby
      * @param studentHobby the studentHobby to set
      */
     public void setHobby(String studentHobby) {
@@ -60,6 +64,7 @@ public class Survey {
     }
 
     /**
+     * This method returns the student's region
      * @return the studentRegion
      */
     public String getRegion() {
@@ -67,6 +72,7 @@ public class Survey {
     }
 
     /**
+     * This method set's the student's region
      * @param studentRegion the studentRegion to set
      */
     public void setRegion(String studentRegion) {
@@ -74,8 +80,8 @@ public class Survey {
     }
 
     /**
-     *
-     * @return string
+     * This method creates a string version of the student
+     * @return string of the student's major, region, and hobby
      */
     public String toString()
     {
@@ -83,8 +89,8 @@ public class Survey {
 
     }
     /**
-     *
-     * @return
+     * This method returns the list
+     * @return DoublyLinkedList<Song> a list of the songs
      */
     public DoublyLinkedList<Song> getList()
     {
