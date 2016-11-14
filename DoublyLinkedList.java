@@ -1,83 +1,94 @@
-/**
- * The package 
- */
 package prj5;
 
 /**
- * @author Purnima Ghosh
+ * @author Purnima Ghosh, Alex Bochel, Omar
  * @version 11.13.2016
- * This class creates a doubly linked list that can be used to create a 
- * list for either songs or people
- * @param <T>   is the generic type
+ * 
+ * @param <T> This is the generic type.
  */
 public class DoublyLinkedList<T> 
 {
+    
+    /**
+     * This class represents the nodes for the DoublyLinkedList.
+     * 
+     * @author Alexander Bochel, Omar, Purnima Ghosh
+     *
+     * @param <E> This is the generic type for this class. 
+     */
     private class Node<E> 
     {
         private Node<E> next;
         private Node<E> previous;
         private E data;
+
         /**
-         * This constructor sets the data for a node
-         * as the data in the paramater
-         * @param datum is the data contained in the node
+         * This method stores data in nodes. 
+         * 
+         * @param d The data. 
          */
-        public Node(E datum) 
+        public Node(E d) 
         {
-            data = datum;
+            data = d;
         }
+
         /**
-         * This method sets the next Node to the node taken as the
-         * parameter
-         * @param n is a node that is being set to the next node
+         * This method sets the next node. 
+         * 
+         * @param n The next node. 
          */
         public void setNext(Node<E> n) 
         {
             next = n;
         }
+
         /**
-         * This method sets the previous Node to the node taken as the
-         * parameter
-         * @param n is a node that is being set to the previous node
+         * This method sets the previous node. 
+         * 
+         * @param n The previous node. 
          */
         public void setPrevious(Node<E> n) 
         {
             previous = n;
         }
+
         /**
-         * This method returns the next node in the linked list
-         * @return a Node that is the next Node
+         * This method returns the next node. 
+         * 
+         * @return Node<E> The next node. 
          */
         public Node<E> next() 
         {
             return next;
         }
+
         /**
-         * This method returns the previous node in the linked list
-         * @return a Node previous in the list
+         * This method returns the previous node. 
+         * 
+         * @return Node<E> The previous node. 
          */
         public Node<E> previous() 
         {
             return previous;
         }
+
         /**
-         * This method gets the data from the node
-         * @return E the data contained in the node
+         * This method returns the data of the node. 
+         * 
+         * @return data of the node. 
          */
         public E getData() 
         {
             return data;
         }
     }
-    
+   
     private int size;
     private Node<T> head;
     private Node<T> tail;
+
     /**
-     * This constructor initializes a head and tail for the
-     * doubly linked list and sets the heads next node as
-     * the tail and tail's previous node as the head. It also
-     * set size to 0
+     * This is the constructor for the DoublyLinkedList. 
      */
     public DoublyLinkedList() 
     {
@@ -87,54 +98,64 @@ public class DoublyLinkedList<T>
         tail.setPrevious(head);
         size = 0;
     }
+
     /**
-     * This method asks if size is equals to zero
-     * @return true if the size is equal to 0 and false
-     * when size is not 0
+     * This method returns whether or not the list is empty. 
+     * 
+     * @return boolean Whether the size is equals to 0. 
      */
     public boolean isEmpty() 
     {
         return size == 0;
     }
+
     /**
-     * The size method returns the size of the list
-     * @return size an integer variable that represents
-     * the size of the list
+     * This method returns the size of the list. 
+     * 
+     * @return int The list size. 
      */
     public int size() 
     {
         return size;
     }
+
     /**
-     * This method tells when the given object is in the list
-     * @param obj the object is being searched for
-     * @return true if the list contains the object
+     * This method checks to see if the list contains a specific entry. 
+     * 
+     * @param obj The object being checked for. 
+     * @return int The index of the object. 
      */
     public boolean contains(T obj) 
     {
         return lastIndexOf(obj) != -1;
     }
+
     /**
-     * This method gets and returns the node at the given index
-     * @param index the index number you want to get
-     * @return T the data from the node being recieved
+     * This method gets the data at a specific index. 
+     * 
+     * @param index The index of the wanted object. 
+     * @return Data from an index. 
      */
     public T get(int index) 
     {
         return getNodeAtIndex(index).getData();
     }
+
     /**
-     * This method adds a new entry to the end of the list
-     * @param newEntry is the entry that is being added to the list
+     * This method adds an entry to the list. 
+     * 
+     * @param newEntry The entry being added. 
      */
     public void add(T newEntry) 
     {
         add(size(), newEntry);
     }
+
     /**
-     * This method adds an object to the list at a specified index
-     * @param index the place in the list that an entry is being added to
-     * @param obj the item that is being added to the list
+     * This method adds an object to a certain index. 
+     * 
+     * @param index To be added at. 
+     * @param obj To be added. 
      */
     public void add(int index, T obj) 
     {
@@ -162,10 +183,12 @@ public class DoublyLinkedList<T>
         size++;
 
     }
+
     /**
-     * This method returns the node at a given index
-     * @param index the place where the node we want is located
-     * @return Node<T> the node at the given index
+     * This method gets the node at the specified index. 
+     * 
+     * @param index
+     * @return current The node at te index specified.  
      */
     private Node<T> getNodeAtIndex(int index) 
     {
@@ -179,13 +202,19 @@ public class DoublyLinkedList<T>
         }
         return current;
     }
+
     /**
-     * This method finds the last appearance of an object
-     * @param obj is the object being searched for
-     * @return int of either the index of the object or -1 if the object wasn't found
+     * This method finds the last index of a certain object. 
+     * 
+     * @param obj Being looked for. 
+     * @return int Where the object was found. 
      */
     public int lastIndexOf(T obj) 
     {
+        /*
+         * We should go from the end of the list as then we an stop once we find
+         * the first one
+         */
         Node<T> current = tail.previous();
         for (int i = size() - 1; i >= 0; i--) {
             if (current.getData().equals(obj)) {
@@ -195,9 +224,46 @@ public class DoublyLinkedList<T>
         }
         return -1;  //if we do not find it
     }
+
     /**
-     * This method converts the list into a string
-     * @return String of the list
+     * This method removes an entry at a specific index. 
+     * 
+     * @param index
+     * @return
+     */
+    public boolean remove(int index) 
+    {
+        Node<T> nodeToBeRemoved = getNodeAtIndex(index);
+        nodeToBeRemoved.previous().setNext(nodeToBeRemoved.next());
+        nodeToBeRemoved.next().setPrevious(nodeToBeRemoved.previous());
+        size--;
+        return true;
+    }
+    
+    /**
+     * This method removes a specific object from the list. 
+     * 
+     * @param obj
+     * @return The object being removed. 
+     */
+    public T remove(T obj) 
+    {
+        Node<T> current = head.next();
+        while (!current.equals(tail)) {
+            if (current.getData().equals(obj)) {
+                current.previous().setNext(current.next());
+                current.next().setPrevious(current.previous());
+                size--;
+                return current.getData();
+            }
+            current = current.next();
+        }
+        return null; 
+    }
+
+    /**
+     * This method makes a string out of the data. 
+     * @return String of data.
      */
     @Override
     public String toString() 
