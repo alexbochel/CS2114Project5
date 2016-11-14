@@ -8,16 +8,16 @@ import java.util.LinkedList;
  * @version 2016.11.13
  */
 public class Survey {
-    
+
     //Keeps track of student info.
     private String studentMajor;
     private String studentHobby;
     private String studentRegion;
-    public DoublyLinkedList<Song> list;
-    
+    private DoublyLinkedList<Song> list;
+
     /**
      * Instantiates major, hobby and region.
-     * 
+     *
      * @param major
      * @param hobby
      * @param region
@@ -72,14 +72,22 @@ public class Survey {
     public void setRegion(String studentRegion) {
         this.studentRegion = studentRegion;
     }
-    
+
     /**
-     * 
+     *
      * @return string
      */
     public String toString()
     {
         return studentMajor + ", " + studentRegion + ", " + studentHobby;
-        
+
+    }
+    /**
+     *
+     * @return
+     */
+    public DoublyLinkedList<Song> getList()
+    {
+        return list;
     }
 }
