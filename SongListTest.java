@@ -1,7 +1,7 @@
 package prj5;
 
 /**
- * This test class tests the SongList class. \
+ * This test class tests the SongList class. 
  *
  * @author Alexander James Bochel
  * @version 2016.11.13
@@ -20,8 +20,8 @@ public class SongListTest extends student.TestCase {
         songList = new SongList("SongListTest1.csv");
 
         // Create songs to go into the songList.
-        song = new Song("All You Need Is Love",
-                "The Beatles", 1967, "pop rock");
+        //song = new Song("All You Need Is Love",
+              //  "The Beatles", 1967, "pop rock");
     }
 
     /**
@@ -40,7 +40,4 @@ public class SongListTest extends student.TestCase {
     public void testIsEmpty() {
         assertFalse(songList.isEmpty());
     }
-
-
-
 }

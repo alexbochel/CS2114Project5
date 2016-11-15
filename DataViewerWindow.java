@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 package prj5;
 
 import java.awt.Color;
@@ -41,84 +44,84 @@ public class DataViewerWindow
      */
     public DataViewerWindow()
     {
-        
+
         //Creates a new Window
         window = new Window("Class Music Data");
-        
+
         //System.out.println(window.getHeight());
         //System.out.println(window.getWidth());
-        
+
         //Initializes all of the buttons and adds them to the window
         prevButton = new Button("Previous");
         window.addButton(prevButton, WindowSide.NORTH);
-        
+
         sortArtist = new Button("Sort By Artist");
         window.addButton(sortArtist, WindowSide.NORTH);
-        
+
         sortTitle = new Button("Sort by Song Title");
         window.addButton(sortTitle, WindowSide.NORTH);
-        
+
         sortReleaseYear = new Button("Sort by Release Year");
         window.addButton(sortReleaseYear, WindowSide.NORTH);
-        
+
         sortGenre = new Button("Sort by Genre");
         window.addButton(sortGenre, WindowSide.NORTH);
-        
+
         next = new Button("Next");
         window.addButton(next, WindowSide.NORTH);
-        
+
         representHobby = new Button("Represent Hobby");
         window.addButton(representHobby, WindowSide.SOUTH);
-        
+
         representMajor = new Button("Represent Major");
         window.addButton(representMajor, WindowSide.SOUTH);
-        
+
         representRegion = new Button("Represent Region");
         window.addButton(representRegion, WindowSide.SOUTH);
-        
+
         quit = new Button("Quit");
         window.addButton(quit, WindowSide.SOUTH);
-        
+
         //Adds all the static bars
         towerOne = new Shape(window.getWidth()/3, 
                 window.getHeight()/3, 5, 50, Color.black);
         window.addShape(towerOne);
-        
+
         towerTwo = new Shape(window.getWidth()*2/3, 
                 window.getHeight()/3, 5, 50, Color.black);
         window.addShape(towerTwo);
-        
+
         towerThree = new Shape(window.getWidth()*3/3, 
                 window.getHeight()/3, 5, 50, Color.black);
         window.addShape(towerThree);
-        
+
         towerFour = new Shape(window.getWidth()/3, 
                 window.getHeight()*2/3, 5, 50, Color.black);
         window.addShape(towerFour);
-        
+
         towerFive = new Shape(window.getWidth()*2/3, 
                 window.getHeight()*2/3, 5, 50, Color.black);
         window.addShape(towerFive);
-        
+
         towerSix = new Shape(window.getWidth()*3/3, 
                 window.getHeight()*2/3, 5, 50, Color.black);
         window.addShape(towerSix);
-        
+
         towerSeven = new Shape(window.getWidth()/3, 
                 window.getHeight()*3/3, 5, 50, Color.black);
         window.addShape(towerSeven);
-        
+
         towerEight = new Shape(window.getWidth()*2/3, 
                 window.getHeight()*3/3, 5, 50, Color.black);
         window.addShape(towerEight);
-        
+
         towerNine = new Shape(window.getWidth()*3/3, 
                 window.getHeight()*3/3, 5, 50, Color.black);
         window.addShape(towerNine);
-        
+
         //Add glyphs
         shapeCreator();
-        
+
         //Add Legend
         legendMaker();
     }
@@ -183,7 +186,7 @@ public class DataViewerWindow
         music.setBackgroundColor(Color.white);
         window.addShape(music);
         window.moveToFront(music);
-        
+
         Shape bar = new Shape(window.getWidth() + 200,
                 window.getHeight() - 70, 5, 50, Color.black);
         window.addShape(bar);
