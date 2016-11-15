@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 package prj5;
 
 import java.awt.Color;
@@ -15,110 +18,116 @@ import CS2114.WindowSide;
  */
 public class DataViewerWindow 
 {
-    private Window window;
-    private Button sortArtist;
-    private Button prevButton;
-    private Button sortTitle;
-    private Button sortReleaseYear;
-    private Button sortGenre;
-    private Button next;
-    private Button representHobby;
-    private Button representMajor;
-    private Button representRegion;
-    private Button quit;
     private Shape towerOne;
-    private Shape towerTwo;
-    private Shape towerThree;
-    private Shape towerFour;
-    private Shape towerFive;
-    private Shape towerSix;
-    private Shape towerSeven;
-    private Shape towerEight;
-    private Shape towerNine;
+    private Window window;
+
     /**
      * Constructor that initializes all of the buttons and some of the 
      * static shapes for the window
      */
     public DataViewerWindow()
     {
-        
+
         //Creates a new Window
         window = new Window("Class Music Data");
-        
+
         //System.out.println(window.getHeight());
         //System.out.println(window.getWidth());
-        
+
+        //These variables will be made fields for the final project.
+        Button sortArtist;
+        Button prevButton;
+        Button sortTitle;
+        Button sortReleaseYear;
+        Button sortGenre;
+        Button next;
+        Button representHobby;
+        Button representMajor;
+        Button representRegion;
+        Button quit;
+
         //Initializes all of the buttons and adds them to the window
         prevButton = new Button("Previous");
         window.addButton(prevButton, WindowSide.NORTH);
-        
+
         sortArtist = new Button("Sort By Artist");
         window.addButton(sortArtist, WindowSide.NORTH);
-        
+
         sortTitle = new Button("Sort by Song Title");
         window.addButton(sortTitle, WindowSide.NORTH);
-        
+
         sortReleaseYear = new Button("Sort by Release Year");
         window.addButton(sortReleaseYear, WindowSide.NORTH);
-        
+
         sortGenre = new Button("Sort by Genre");
         window.addButton(sortGenre, WindowSide.NORTH);
-        
+
         next = new Button("Next");
         window.addButton(next, WindowSide.NORTH);
-        
+
         representHobby = new Button("Represent Hobby");
         window.addButton(representHobby, WindowSide.SOUTH);
-        
+
         representMajor = new Button("Represent Major");
         window.addButton(representMajor, WindowSide.SOUTH);
-        
+
         representRegion = new Button("Represent Region");
         window.addButton(representRegion, WindowSide.SOUTH);
-        
+
         quit = new Button("Quit");
         window.addButton(quit, WindowSide.SOUTH);
-        
-        //Adds all the static bars
-        towerOne = new Shape(window.getWidth()/3, 
-                window.getHeight()/3, 5, 50, Color.black);
+
+        // Adds all the static bars
+        // These local variables will be made fields in the final
+        // project
+        Shape towerTwo;
+        Shape towerThree;
+        Shape towerFour;
+        Shape towerFive;
+        Shape towerSix;
+        Shape towerSeven;
+        Shape towerEight;
+        Shape towerNine;
+
+        towerOne = new Shape(window.getWidth() / 3, 
+                window.getHeight() / 3, 5, 50, Color.black);
         window.addShape(towerOne);
-        
-        towerTwo = new Shape(window.getWidth()*2/3, 
-                window.getHeight()/3, 5, 50, Color.black);
+
+        towerTwo = new Shape(window.getWidth() * 2 / 3, 
+                window.getHeight() / 3, 5, 50, Color.black);
         window.addShape(towerTwo);
-        
-        towerThree = new Shape(window.getWidth()*3/3, 
-                window.getHeight()/3, 5, 50, Color.black);
+
+        towerThree = new Shape(window.getWidth() * 3 / 3, 
+                window.getHeight() / 3, 5, 50, Color.black);
         window.addShape(towerThree);
-        
-        towerFour = new Shape(window.getWidth()/3, 
-                window.getHeight()*2/3, 5, 50, Color.black);
+
+        towerFour = new Shape(window.getWidth() / 3, 
+                window.getHeight() * 2 / 3, 5, 50, Color.black);
         window.addShape(towerFour);
-        
-        towerFive = new Shape(window.getWidth()*2/3, 
-                window.getHeight()*2/3, 5, 50, Color.black);
+
+        towerFive = new Shape(window.getWidth() * 2 / 3, 
+                window.getHeight() * 2 / 3, 5, 50, Color.black);
         window.addShape(towerFive);
-        
-        towerSix = new Shape(window.getWidth()*3/3, 
-                window.getHeight()*2/3, 5, 50, Color.black);
+
+        towerSix = new Shape(window.getWidth() * 3 / 3, 
+                window.getHeight() * 2 / 3, 5, 50, Color.black);
         window.addShape(towerSix);
-        
-        towerSeven = new Shape(window.getWidth()/3, 
-                window.getHeight()*3/3, 5, 50, Color.black);
+
+        towerSeven = new Shape(window.getWidth() / 3, 
+                window.getHeight() * 3 / 3, 5, 50, Color.black);
         window.addShape(towerSeven);
-        
-        towerEight = new Shape(window.getWidth()*2/3, 
-                window.getHeight()*3/3, 5, 50, Color.black);
+
+        towerEight = new Shape(window.getWidth() * 2 / 3, 
+                window.getHeight() * 3 / 3, 5, 50, Color.black);
         window.addShape(towerEight);
-        
-        towerNine = new Shape(window.getWidth()*3/3, 
-                window.getHeight()*3/3, 5, 50, Color.black);
+
+        towerNine = new Shape(window.getWidth() * 3 / 3, 
+                window.getHeight() * 3 / 3, 5, 50, Color.black);
         window.addShape(towerNine);
-        
+
         //Add glyphs
         shapeCreator();
-        
+
         //Add Legend
         legendMaker();
     }
@@ -127,17 +136,17 @@ public class DataViewerWindow
      */
     public void shapeCreator()
     {
-        Shape readBar = new Shape(window.getWidth()/3 - 50,
-                window.getHeight()/3, 100, 12, Color.MAGENTA);
+        Shape readBar = new Shape(window.getWidth() / 3 - 50,
+                window.getHeight() / 3, 100, 12, Color.MAGENTA);
         window.addShape(readBar);
-        Shape sportsBar = new Shape(window.getWidth()/3 - 50, 
-                window.getHeight()/3 + 12, 100, 12, Color.blue);
+        Shape sportsBar = new Shape(window.getWidth() / 3 - 50, 
+                window.getHeight() / 3 + 12, 100, 12, Color.blue);
         window.addShape(sportsBar);
-        Shape artBar = new Shape(window.getWidth()/3 - 50, 
-                window.getHeight()/3 + 24, 100, 12, Color.orange);
+        Shape artBar = new Shape(window.getWidth() / 3 - 50, 
+                window.getHeight() / 3 + 24, 100, 12, Color.orange);
         window.addShape(artBar);
-        Shape musicBar = new Shape(window.getWidth()/3 - 50, 
-                window.getHeight()/3 + 36, 100, 12, Color.green);
+        Shape musicBar = new Shape(window.getWidth() / 3 - 50, 
+                window.getHeight() / 3 + 36, 100, 12, Color.green);
         window.addShape(musicBar);
         window.moveToFront(towerOne);
     }
@@ -183,7 +192,7 @@ public class DataViewerWindow
         music.setBackgroundColor(Color.white);
         window.addShape(music);
         window.moveToFront(music);
-        
+
         Shape bar = new Shape(window.getWidth() + 200,
                 window.getHeight() - 70, 5, 50, Color.black);
         window.addShape(bar);

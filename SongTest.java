@@ -12,7 +12,7 @@ public class SongTest extends TestCase {
     private Song song2;
 
     /**
-     * This is the setup method for the test class.
+     * This is the setup method for the test class. 
      */
     public void setUp()
     {
@@ -53,7 +53,6 @@ public class SongTest extends TestCase {
         assertEquals(0, song.getSportsHeard());
 
         // Song Information
-
         assertEquals("All You Need Is Love", song.getTitle());
         assertEquals("The Beatles", song.getArtist());
         assertEquals("1967", song.getYear());
@@ -63,11 +62,10 @@ public class SongTest extends TestCase {
         String str = "song title all you need is love\nsong artist "
                 + "the beatles\nsong genre pop rock\nsong year 1967";
         assertEquals(str, song.toString());
-
     }
 
     /**
-     * This method tests the compareToTitle methods for the song class.
+     * This method tests the compareToTitle methods for the song class. 
      */
     public void testCompareToTitle() {
         assertEquals(-1, song.compareToTitle(song2));
@@ -76,16 +74,16 @@ public class SongTest extends TestCase {
     }
 
     /**
-     * This method tests the compareToGenre method.
+     * This method tests the compareToGenre method. 
      */
     public void testCompareToGenre() {
         assertEquals(1, song.compareToGenre(song2));
         assertEquals(-1, song2.compareToGenre(song));
         assertEquals(0, song.compareToGenre(song));
-    }
+    }    
 
     /**
-     * Test heard and not heard methods
+     * Test heard and not heard methods in Song class. 
      */
     public void testHeard()
     {
@@ -143,7 +141,7 @@ public class SongTest extends TestCase {
 
         // Default
         try {
-           song.heard("fishing");
+            song.heard("fishing");
         }
         catch (Exception e)
         {
@@ -152,7 +150,7 @@ public class SongTest extends TestCase {
         }
 
         try {
-           song.notHeard("fishing");
+            song.notHeard("fishing");
         }
         catch (Exception e)
         {
@@ -162,20 +160,20 @@ public class SongTest extends TestCase {
 
         try {
             song.liked("fishing");
-         }
-         catch (Exception e)
-         {
-             assertNotNull(e);
-             assertTrue(e instanceof IllegalStateException);
-         }
+        }
+        catch (Exception e)
+        {
+            assertNotNull(e);
+            assertTrue(e instanceof IllegalStateException);
+        }
 
-         try {
+        try {
             song.notLiked("fishing");
-         }
-         catch (Exception e)
-         {
-             assertNotNull(e);
-             assertTrue(e instanceof IllegalStateException);
-         }
+        }
+        catch (Exception e)
+        {
+            assertNotNull(e);
+            assertTrue(e instanceof IllegalStateException);
+        }
     }
 }

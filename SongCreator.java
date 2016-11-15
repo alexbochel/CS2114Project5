@@ -3,8 +3,11 @@ package prj5;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+
 /**
  * This class scans in the information from the music survey
+ * @author Alex Bochel
+ * @version 2016.11.15
  */
 public class SongCreator 
 {
@@ -12,20 +15,28 @@ public class SongCreator
 
     /**
      * This method scans in the survey information from the survey
-     * @param fileName is the name of the file being imported
-     * @param dataFile is the data from the file being imported
+     * @param surveyFile is the name of the file being imported
+     * @param songFile is the data from the file being imported
      */
     public SongCreator(String surveyFile, String songFile) 
     {
-        this.createStudents(surveyFile);
 
         songList = new SongList(songFile);
+        
+        this.createStudents(surveyFile);
+
         songList.sortGenre();
         print();
         songList.sortTitle();
         print();
     }
 
+    /**
+     * This method creates the students whose information 
+     * will be stored in the song objects. 
+     * 
+     * @param file containing student information. 
+     */
     public void createStudents(String file)
     {
         Scanner surveyScanner = null;
@@ -51,7 +62,7 @@ public class SongCreator
         while (surveyScanner.hasNextLine())
         {
             String info = surveyScanner.nextLine();
-            String[] infoArray = info.split("*, *");
+            String[] infoArray = info.split(",");
 
             if (infoArray.length > 5)
             {
@@ -84,7 +95,7 @@ public class SongCreator
                             songList.get(index).liked(hobby);
                         }
 
-                        index ++;
+                        index++;
                     }
                 }
 
@@ -92,14 +103,19 @@ public class SongCreator
         }
         surveyScanner.close();
     }
+    
+    /**
+     * This method contains the print calls in order to be able to sort 
+     * the list first and then print. This will be done twice. 
+     */
     public void print()
     {
         for (int i = 0; i < songList.size(); i++)
         {
             System.out.println("song title " + songList.get(i).getTitle());
-            System.out.println("song title " + songList.get(i).getArtist());
-            System.out.println("song title " + songList.get(i).getGenre());
-            System.out.println("song title " + songList.get(i).getYear());
+            System.out.println("song artist " + songList.get(i).getArtist());
+            System.out.println("song genre " + songList.get(i).getGenre());
+            System.out.println("song year " + songList.get(i).getYear());
             System.out.println("heard");
             
             System.out.print("reading");
@@ -142,7 +158,7 @@ public class SongCreator
             }
             else 
             {
-                System.out.print(songList.get(i).getMusicHeard() * 100 
+                System.out.println(songList.get(i).getMusicHeard() * 100 
                         / songList.get(i).getMusicTotalHeard());
             }
             
@@ -184,203 +200,15 @@ public class SongCreator
             System.out.print(" music");
             
             if (songList.get(i).getMusicTotalLiked() == 0) {
-                System.out.print(0);
+                System.out.println(0);
             }
             else 
             {
-                System.out.print(songList.get(i).getMusicLiked() * 100 
+                System.out.println(songList.get(i).getMusicLiked() * 100 
                         / songList.get(i).getMusicTotalLiked());
             }
+            
+            System.out.println();
         }
     }
-    /*
-    public void addSurveys() 
-    {
-
-        try {
-            dataKey = new Scanner(new File(songData));
-        } 
-        catch (Exception e) 
-        {
-            if (e instanceof FileNotFoundException) 
-            {
-                e.printStackTrace();
-                System.exit(0);
-            }
-        }
-        dataKey.nextLine();
-        int i = 0;
-        while (dataKey.hasNextLine()) 
-        {
-
-            String[] dataSplit = dataKey.nextLine().split(",");
-            Survey surveyList.add(new Survey(dataSplit[2], dataSplit[3], 
-                    dataSplit[4]);
-
-            int k = 0;
-
-            for (int j = 5; j < dataSplit.length; j++) {
-
-                if (j % 2 == 0) {
-                    if (dataSplit[j].equals("Yes")) {
-                        surveyList.get(i).getList().get(k).setLikes();
-                    }
-                }
-                else {
-                    if (dataSplit[j].equals("Yes")) {
-                        surveyList.get(i).getList().get(k).setHeard();
-
-                    }
-
-                    k--;
-
-                }
-
-                k++;
-            }
-            i++;
-        }
-
-        dataKey.close();
-    }
-
-
-     *//**
-     * This method calculates the dislikes, likes, and 
-     * heards for different hobbies
-     *//*
-    public void calculate() 
-    {
-        int sport = 0;
-        int sportLikes = 0;
-        int sportHeard = 0;
-        int music = 0;
-        int musicLikes = 0;
-        int musicHeard = 0;
-        int reading = 0;
-        int readingLikes = 0;
-        int readingHeard = 0;
-        int art = 0;
-        int artLikes = 0;
-        int artHeard = 0;
-
-        for (int i = 0; i < surveyList.size(); i++) 
-        {
-
-            Survey s = surveyList.get(i);
-
-            String hobby = s.getHobby();
-
-            switch (hobby) {
-            case "sports":
-                sport++;
-                break;
-            case "reading":
-                reading++;
-                break;
-            case "music":
-                music++;
-                break;
-            case "art":
-                art++;
-                break;
-            default:
-                break;
-            }
-
-            for (int j = 0; j < s.getList().size(); j++) 
-            {
-
-                if (s.getList().get(j).getHeard()) {
-                    switch (hobby) {
-                    case "sports":
-                        sportHeard++;
-                        break;
-                    case "reading":
-                        readingHeard++;
-                        break;
-                    case "music":
-                        musicHeard++;
-                        break;
-                    case "art":
-                        artHeard++;
-                        break;
-                    default:
-                        break;
-                    }
-                }
-                if (s.getList().get(j).getLikes()) 
-                {
-                    switch (hobby) {
-                    case "sports":
-                        sportLikes += 1;
-                        break;
-                    case "reading":
-                        readingLikes += 1;
-                        break;
-                    case "music":
-                        musicLikes += 1;
-                        break;
-                    case "art":
-                        artLikes += 1;
-                        break;
-                    default:
-                        break;
-                    }
-                }
-            }
-        }
-
-        if (sport == 0) {
-            sportLikes = 0;
-            sportHeard = 0;
-        }
-        else {
-            sportLikes = (int) ((double) sportLikes / sport * 100);
-            sportHeard = (int) ((double) sportHeard / sport * 100);
-        }
-        if (reading == 0) {
-            readingLikes = 0;
-            readingHeard = 0;
-        }
-        else {
-            readingLikes = (int) ((double) readingLikes / reading * 100);
-            readingHeard = (int) ((double) readingHeard / reading * 100);
-        }
-        if (music == 0) {
-            musicLikes = 0;
-            musicHeard = 0;
-        }
-        else {
-            musicLikes = (int) ((double) musicLikes / music * 100);
-            musicHeard = (int) ((double) musicHeard / music * 100);
-        }
-        if (art == 0) {
-            artLikes = 0;
-            artHeard = 0;
-        }
-        else {
-            artLikes = (int) ((double) artLikes / art * 100);
-            artHeard = (int) ((double) artHeard / art * 100);
-        }
-
-        for (int i = 0; i < surveyList.get(0).getList().size() ; i++) {
-            System.out.println(surveyList.get(0).getList().get(i).toString());
-            System.out.println("heard");
-            System.out.println("reading" + readingHeard + " art" + artHeard
-                    + " sports" + sportHeard + " music" + musicHeard);
-            System.out.println("likes");
-            System.out.println("reading" + readingLikes + " art" + artLikes
-                    + " sports" + sportLikes + " music" + musicLikes);
-        }
-    }
-
-      *//**
-      * This method returns the survey list
-      * @return surveyList a doubly linked list with survey data
-      *//*
-    public SurveyList getSurveyList() 
-    {
-        return surveyList;
-    }*/
 }

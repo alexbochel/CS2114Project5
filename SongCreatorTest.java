@@ -1,40 +1,30 @@
 package prj5;
 
-import java.io.File;
 import student.TestCase;
+
 /**
+ *This test class tests the SongCreator class. 
  *
- * @author omar
+ * @author Omar, Alex Bochel
+ * @version 2016.11.15
  *
  */
 public class SongCreatorTest extends TestCase {
 
-    private SongCreator sc;
-    private Song song;
-    private Survey survey;
-
     /**
-     *
+     * This is the setUp method for the test class. 
      */
     public void setUp() {
-        sc = new SongCreator("SongListTest1.csv", "MusicSurveyDataTest1.csv");
-        song = new Song("All These Things I've Done", "The Killers", 2005,
-                "alternative");
-        survey = new Survey("Math or CMDA", "Southeast", "sports", null);
+       // TODO - Finish this. 
     }
-
+    
     /**
-     *
+     * Filler
      */
-    public void testSomething() {
-        sc.addSurveys();
-
-        assertEquals(6, sc.getSurveyList().size());
-        assertEquals(survey.getHobby(), sc.getSurveyList().get(0).getHobby());
-
-
-
-        sc.calculate();
-
+    public void fillerTest() {
+        int zero = 0;
+        
+        assertEquals(0, zero);
     }
+    
 }
