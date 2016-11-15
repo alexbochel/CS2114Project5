@@ -1,5 +1,6 @@
 package prj5;
 
+import java.io.FileNotFoundException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -20,21 +21,18 @@ public class SongListTest extends student.TestCase {
      */
     public void setUp() {
         // Create the songList.
-        songList = new SongList("SongListTest1.csv");
+        try {
+            songList = new SongList("SongListTest1.csv");
+        } 
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
         // Create songs to go into the songList.
         song = new Song("All You Need Is Love", "The Beatles", 
                 "1967", "pop rock");
     }
     
-    /**
-     * Test constructor
-     */
-    public void testSongList()
-    {
-        assertEquals(5, songList.size());
-    }
-
     /**
      * This tests the addSong method in the SongList class.
      */

@@ -17,25 +17,16 @@ public class SongList extends DoublyLinkedList<Song> implements Iterable<Song> {
     /**
      * This is the constructor for the SongList class.
      * @param file is the file being scanned by the SongList
+     * @throws FileNotFoundException when file is not foun
      */
-    public SongList(String file) 
+    public SongList(String file) throws FileNotFoundException 
     {
         super();
         
         Scanner key = null;
-       
-        try 
-        {
-            key = new Scanner(new File(file));
-        } 
-        catch (Exception e) 
-        {
-            if (e instanceof FileNotFoundException) 
-            {
-                e.printStackTrace();
-                System.exit(0);
-            }
-        }
+        
+        key = new Scanner(new File(file));
+        
 
         key.nextLine();
         while (key.hasNextLine()) {
