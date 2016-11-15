@@ -458,19 +458,19 @@ public class Song {
      * @param hobby Specific hobby of the student. 
      */
     public void heard(String hobby) {
-        if (hobby == "art") {
+        if (hobby.equals("art")) {
             artHeard++;
             artTotalHeard++;
         } 
-        else if (hobby == "reading") {
+        else if (hobby.equals("reading")) {
             readingHeard++;
             readingTotalHeard++;
         } 
-        else if (hobby == "sports") {
+        else if (hobby.equals("sports")) {
             sportsHeard++;
             sportsTotalHeard++;
         } 
-        else if (hobby == "music") {
+        else if (hobby.equals("music")) {
             musicHeard++;
             musicTotalHeard++;
         } 
@@ -486,17 +486,17 @@ public class Song {
      * @param hobby Specific hobby of the student.
      */
     public void notHeard(String hobby) {
-        if (hobby == "art") {
+        if (hobby.equals("art")) {
 
             artTotalHeard++;
         } 
-        else if (hobby == "reading") {
+        else if (hobby.equals("reading")) {
             readingTotalHeard++;
         } 
-        else if (hobby == "sports") {
+        else if (hobby.equals("sports")) {
             sportsTotalHeard++;
         } 
-        else if (hobby == "music") {
+        else if (hobby.equals("music")) {
             musicTotalHeard++;
         } 
         else {
@@ -511,19 +511,19 @@ public class Song {
      * @param hobby Specific hobby of the student.
      */
     public void liked(String hobby) {
-        if (hobby == "art") {
+        if (hobby.equals("art")) {
             artLiked++;
             artTotalLiked++;
         } 
-        else if (hobby == "reading") {
+        else if (hobby.equals("reading")) {
             readingLiked++;
             readingTotalLiked++;
         } 
-        else if (hobby == "sports") {
+        else if (hobby.equals("sports")) {
             sportsLiked++;
             sportsTotalLiked++;
         } 
-        else if (hobby == "music") {
+        else if (hobby.equals("music")) {
             musicLiked++;
             musicTotalLiked++;
         } 
@@ -541,17 +541,17 @@ public class Song {
      *            Specific hobby of the student.
      */
     public void notLiked(String hobby) {
-        if (hobby == "art") {
+        if (hobby.equals("art")) {
 
             artTotalLiked++;
         } 
-        else if (hobby == "reading") {
+        else if (hobby.equals("reading")) {
             readingTotalLiked++;
         } 
-        else if (hobby == "sports") {
+        else if (hobby.equals("sports")) {
             sportsTotalLiked++;
         } 
-        else if (hobby == "music") {
+        else if (hobby.equals("music")) {
             musicTotalLiked++;
         } 
         else {
