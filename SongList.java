@@ -9,11 +9,11 @@ import java.util.Scanner;
 /**
  * @author Purnima Ghosh
  * @version 11.13.2016
- * This class creates a Song List as a DoublyLinkedList that can be iterated through
+ * This class creates a Song List as a 
+ * DoublyLinkedList that can be iterated through
  */
 public class SongList extends DoublyLinkedList<Song> implements Iterable<Song> {
 
-    private Scanner key;
     /**
      * This is the constructor for the SongList class.
      * @param file is the file being scanned by the SongList
@@ -21,7 +21,9 @@ public class SongList extends DoublyLinkedList<Song> implements Iterable<Song> {
     public SongList(String file) 
     {
         super();
-
+        
+        Scanner key = null;
+       
         try 
         {
             key = new Scanner(new File(file));

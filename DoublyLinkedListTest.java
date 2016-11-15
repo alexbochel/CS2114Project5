@@ -1,11 +1,13 @@
 package prj5;
 import student.TestCase;
+
 /**
  * Test methods in DoublyLinkedList
  * @author Omar Jastaniah
  * @version 2016.11.15
  */
 public class DoublyLinkedListTest extends TestCase {
+    
     /**
      * isEmpty
      * contains
@@ -18,6 +20,7 @@ public class DoublyLinkedListTest extends TestCase {
      * 
      */
     private DoublyLinkedList<String> list;
+   
     /**
      * Instantiates DoublyLinkedList for testing
      */

@@ -10,6 +10,7 @@ public class Input {
      * 
      * @param args The parameter for the main class. 
      */
+    @SuppressWarnings("unused")
     public static void main(String[] args)
     {
         SongCreator songCreator = new SongCreator(args[0], args[1]);

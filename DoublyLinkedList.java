@@ -228,8 +228,8 @@ public class DoublyLinkedList<T>
     /**
      * This method removes an entry at a specific index. 
      * 
-     * @param index
-     * @return
+     * @param index To be removed at. 
+     * @return boolean Whether or not remove was succesful.
      */
     public boolean remove(int index) 
     {
@@ -243,7 +243,7 @@ public class DoublyLinkedList<T>
     /**
      * This method removes a specific object from the list. 
      * 
-     * @param obj
+     * @param obj The object being removed. 
      * @return The object being removed. 
      */
     public T remove(T obj) 

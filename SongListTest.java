@@ -1,6 +1,5 @@
 package prj5;
 
-import java.io.FileNotFoundException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -63,7 +62,7 @@ public class SongListTest extends student.TestCase {
     }
 
     /**
-     * Test sort methods
+     * This tests the sort methods for the SongList class. 
      */
     public void testSort() {
         Song temp = new Song("Another One Bites the Dust", "Queen", "1980",
@@ -86,7 +85,7 @@ public class SongListTest extends student.TestCase {
     }
     
     /**
-     * Test iterator methods
+     * This tests the iterator methods in the nested class. 
      */
     public void testIterator()
     {
