@@ -458,26 +458,25 @@ public class Song {
      * @param hobby Specific hobby of the student. 
      */
     public void heard(String hobby) {
-        switch (hobby) {
-            case "art":
-                artHeard++;
-                artTotalHeard++;
-                break;
-            case "reading":
-                readingHeard++;
-                readingTotalHeard++;
-                break;
-            case "sports":
-                sportsHeard++;
-                sportsTotalHeard++;
-                break;
-            case "music":
-                musicHeard++;
-                musicTotalHeard++;
-                break;
-            default:
-                throw new IllegalStateException("Not one of the "
-                        + "possible options");
+        if (hobby == "art") {
+            artHeard++;
+            artTotalHeard++;
+        } 
+        else if (hobby == "reading") {
+            readingHeard++;
+            readingTotalHeard++;
+        } 
+        else if (hobby == "sports") {
+            sportsHeard++;
+            sportsTotalHeard++;
+        } 
+        else if (hobby == "music") {
+            musicHeard++;
+            musicTotalHeard++;
+        } 
+        else {
+            throw new IllegalStateException(
+                    "Not one of the " + "possible options");
         }
     }
 
@@ -487,22 +486,22 @@ public class Song {
      * @param hobby Specific hobby of the student.
      */
     public void notHeard(String hobby) {
-        switch (hobby) {
-            case "art":
-                artTotalHeard++;
-                break;
-            case "reading":
-                readingTotalHeard++;
-                break;
-            case "sports":
-                sportsTotalHeard++;
-                break;
-            case "music":
-                musicTotalHeard++;
-                break;
-            default:
-                throw new IllegalStateException("Not one of the "
-                        + "possible options");
+        if (hobby == "art") {
+
+            artTotalHeard++;
+        } 
+        else if (hobby == "reading") {
+            readingTotalHeard++;
+        } 
+        else if (hobby == "sports") {
+            sportsTotalHeard++;
+        } 
+        else if (hobby == "music") {
+            musicTotalHeard++;
+        } 
+        else {
+            throw new IllegalStateException(
+                    "Not one of the " + "possible options");
         }
     }
 
@@ -512,51 +511,52 @@ public class Song {
      * @param hobby Specific hobby of the student.
      */
     public void liked(String hobby) {
-        switch (hobby) {
-            case "art":
-                artLiked++;
-                artTotalLiked++;
-                break;
-            case "reading":
-                readingLiked++;
-                readingTotalLiked++;
-                break;
-            case "sports":
-                sportsLiked++;
-                sportsTotalLiked++;
-                break;
-            case "music":
-                musicLiked++;
-                musicTotalLiked++;
-                break;
-            default:
-                throw new IllegalStateException("Not one of the "
-                        + "possible options");
+        if (hobby == "art") {
+            artLiked++;
+            artTotalLiked++;
+        } 
+        else if (hobby == "reading") {
+            readingLiked++;
+            readingTotalLiked++;
+        } 
+        else if (hobby == "sports") {
+            sportsLiked++;
+            sportsTotalLiked++;
+        } 
+        else if (hobby == "music") {
+            musicLiked++;
+            musicTotalLiked++;
+        } 
+        else {
+            throw new IllegalStateException(
+                    "Not one of the " + "possible options");
         }
     }
+
 
     /**
      * This method adds notLike to the song.
      * 
-     * @param hobby Specific hobby of the student.
+     * @param hobby
+     *            Specific hobby of the student.
      */
     public void notLiked(String hobby) {
-        switch (hobby) {
-            case "art":
-                artTotalLiked++;
-                break;
-            case "reading":
-                readingTotalLiked++;
-                break;
-            case "sports":
-                sportsTotalLiked++;
-                break;
-            case "music":
-                musicTotalLiked++;
-                break;
-            default:
-                throw new IllegalStateException("Not one of the "
-                        + "possible options");
+        if (hobby == "art") {
+
+            artTotalLiked++;
+        } 
+        else if (hobby == "reading") {
+            readingTotalLiked++;
+        } 
+        else if (hobby == "sports") {
+            sportsTotalLiked++;
+        } 
+        else if (hobby == "music") {
+            musicTotalLiked++;
+        } 
+        else {
+            throw new IllegalStateException(
+                    "Not one of the " + "possible options");
         }
     }
 }
