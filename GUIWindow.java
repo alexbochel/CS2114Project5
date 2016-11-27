@@ -481,7 +481,6 @@ public class GUIWindow {
      */
     public void clickedHobby(Button btn) {
         representation = "Hobby";
-        PAGE = 1;
         window.removeAllShapes();
         legendMaker();
         next.enable();
@@ -489,7 +488,6 @@ public class GUIWindow {
         sortReleaseYear.enable();
         sortTitle.enable();
         sortGenre.enable();
-        prevButton.disable();
         addGlyphs(PAGE, representation, songList);
     }
     
@@ -499,7 +497,6 @@ public class GUIWindow {
      */
     public void clickedMajor(Button btn) {
         representation = "Major";
-        PAGE = 1;
         window.removeAllShapes();
         legendMaker();
         next.enable();
@@ -507,7 +504,6 @@ public class GUIWindow {
         sortReleaseYear.enable();
         sortTitle.enable();
         sortGenre.enable();
-        prevButton.disable();
         addGlyphs(PAGE, representation, songList);
     }
     
@@ -517,7 +513,6 @@ public class GUIWindow {
      */
     public void clickedRegion(Button btn) {
         representation = "Region";
-        PAGE = 1;
         window.removeAllShapes();
         legendMaker();
         next.enable();
@@ -525,7 +520,6 @@ public class GUIWindow {
         sortReleaseYear.enable();
         sortTitle.enable();
         sortGenre.enable();
-        prevButton.disable();
         addGlyphs(PAGE, representation, songList);
     }
     
