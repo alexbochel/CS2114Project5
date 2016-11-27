@@ -80,6 +80,17 @@ public class SongListTest extends student.TestCase {
         assertEquals(song.toString(), songList.get(1).toString());
         assertEquals(test.toString(), songList.get(3).toString());
         assertEquals(temp.toString(), songList.get(4).toString());
+        
+        songList.sortYear();
+        
+        assertEquals(song.toString(), songList.get(0).toString());
+        assertEquals(test.toString(), songList.get(2).toString());
+        assertEquals(temp.toString(), songList.get(3).toString());
+        
+        songList.sortArtist();
+        assertEquals(song.toString(), songList.get(2).toString());
+        assertEquals(test.toString(), songList.get(4).toString());
+        assertEquals(temp.toString(), songList.get(1).toString());
     }
     
     /**
@@ -88,7 +99,6 @@ public class SongListTest extends student.TestCase {
     public void testIterator()
     {
         songList.sortTitle();
-        System.out.print(songList);
         Iterator<Song> iter = songList.iterator();
         iter.next();
         
