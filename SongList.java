@@ -9,7 +9,7 @@ import java.util.Scanner;
 /**
  * @author Purnima Ghosh
  * @version 11.13.2016
- * This class creates a Song List as a 
+ * This class creates a Song List as a
  * DoublyLinkedList that can be iterated through
  */
 public class SongList extends DoublyLinkedList<Song> implements Iterable<Song> {
@@ -19,14 +19,14 @@ public class SongList extends DoublyLinkedList<Song> implements Iterable<Song> {
      * @param file is the file being scanned by the SongList
      * @throws FileNotFoundException when file is not foun
      */
-    public SongList(String file) throws FileNotFoundException 
+    public SongList(String file) throws FileNotFoundException
     {
         super();
-        
+
         Scanner key = null;
-        
+
         key = new Scanner(new File(file));
-        
+
 
         key.nextLine();
         while (key.hasNextLine()) {
@@ -52,44 +52,96 @@ public class SongList extends DoublyLinkedList<Song> implements Iterable<Song> {
      * This is a selection sort method that will sort the song by title.
      */
     public void sortTitle() {
-        for (int i = 0; i < this.size(); i++) 
+        for (int i = 0; i < this.size(); i++)
         {
             int index = i;
 
-            for (int j = i; j >= 0; j--) {                
-                if ((this.get(index).compareToTitle(super.get(j))) < 0) 
+            for (int j = i; j >= 0; j--) {
+                if ((this.get(index).compareToTitle(super.get(j))) < 0)
                 {
-                    
+
                     Song song = super.get(index);
-                    
+
                     index = j;
-                    
+
                     super.add(j, super.remove(song));
 
                 }
             }
         }
     }
-    
+
     /**
      * This is a selection sort method that will sort the song by genre.
      */
-    public void sortGenre() 
+    public void sortGenre()
     {
-        for (int i = 0; i < this.size(); i++) 
+        for (int i = 0; i < this.size(); i++)
         {
-            
+
             int index = i;
-            
-            for (int j = i; j >= 0; j--) 
-            {                
-                if ((this.get(index).compareToGenre(super.get(j))) < 0) 
+
+            for (int j = i; j >= 0; j--)
+            {
+                if ((this.get(index).compareToGenre(super.get(j))) < 0)
                 {
-                    
+
                     Song song = super.get(index);
-                    
+
                     index = j;
-                    
+
+                    super.add(j, super.remove(song));
+
+                }
+            }
+        }
+    }
+
+    /**
+     * This is a selection sort method that will sort the song by artist.
+     */
+    public void sortArtist()
+    {
+        for (int i = 0; i < this.size(); i++)
+        {
+
+            int index = i;
+
+            for (int j = i; j >= 0; j--)
+            {
+                if ((this.get(index).compareToArtist(super.get(j))) < 0)
+                {
+
+                    Song song = super.get(index);
+
+                    index = j;
+
+                    super.add(j, super.remove(song));
+
+                }
+            }
+        }
+    }
+
+    /**
+     * This is a selection sort method that will sort the song by year.
+     */
+    public void sortYear()
+    {
+        for (int i = 0; i < this.size(); i++)
+        {
+
+            int index = i;
+
+            for (int j = i; j >= 0; j--)
+            {
+                if ((this.get(index).compareToYear(super.get(j))) < 0)
+                {
+
+                    Song song = super.get(index);
+
+                    index = j;
+
                     super.add(j, super.remove(song));
 
                 }
@@ -102,7 +154,7 @@ public class SongList extends DoublyLinkedList<Song> implements Iterable<Song> {
      * @return Iterator<Song> an iterator that can move through the list
      */
     @Override
-    public Iterator<Song> iterator() 
+    public Iterator<Song> iterator()
     {
         return new SongIterator();
     }
@@ -114,7 +166,7 @@ public class SongList extends DoublyLinkedList<Song> implements Iterable<Song> {
      * @version 11.02.2016
      *
      */
-    private class SongIterator implements Iterator<Song> 
+    private class SongIterator implements Iterator<Song>
     {
         private int index;
         private Song song;
@@ -138,15 +190,15 @@ public class SongList extends DoublyLinkedList<Song> implements Iterable<Song> {
          * This method returns the next value
          */
         @Override
-        public Song next() 
+        public Song next()
         {
-            if (hasNext()) 
+            if (hasNext())
             {
                 song = get(index + 1);
                 index++;
                 return song;
-            } 
-            else 
+            }
+            else
             {
                 throw new NoSuchElementException();
             }
