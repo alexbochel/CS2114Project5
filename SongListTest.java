@@ -19,13 +19,14 @@ public class SongTest extends TestCase {
         song = new Song("All You Need Is Love",
                 "The Beatles", "1967", "pop rock");
         song2 = new Song("Fat Lip",
-                "Sum 41", "1967", "alternative");
+                "Sum 41", "2001", "alternative");
     }
 
     /**
      * This method tests the set likes method for each hobby.
      */
     public void testGetMethods() {
+        //<--Hobby-->//
         // Liked
         assertEquals(0, song.getArtTotalLiked());
         assertEquals(0, song.getArtLiked());
@@ -51,6 +52,60 @@ public class SongTest extends TestCase {
 
         assertEquals(0, song.getSportsTotalHeard());
         assertEquals(0, song.getSportsHeard());
+        
+        //<--Major-->//
+        // Liked
+        assertEquals(0, song.getCsTotalLiked());
+        assertEquals(0, song.getCsLiked());
+
+        assertEquals(0, song.getMathTotalLiked());
+        assertEquals(0, song.getMathLiked());
+
+        assertEquals(0, song.getOtherTotalLiked());
+        assertEquals(0, song.getOtherLiked());
+
+        assertEquals(0, song.getEngineeringTotalLiked());
+        assertEquals(0, song.getEngineeringLiked());
+
+        // Heard
+        assertEquals(0, song.getCsTotalHeard());
+        assertEquals(0, song.getCsHeard());
+
+        assertEquals(0, song.getMathTotalHeard());
+        assertEquals(0, song.getMathHeard());
+
+        assertEquals(0, song.getOtherTotalHeard());
+        assertEquals(0, song.getOtherHeard());
+
+        assertEquals(0, song.getEngineeringTotalHeard());
+        assertEquals(0, song.getEngineeringHeard());
+        
+        //<--Region-->//
+        // Liked
+        assertEquals(0, song.getNortheastTotalLiked());
+        assertEquals(0, song.getNortheastLiked());
+
+        assertEquals(0, song.getSoutheastTotalLiked());
+        assertEquals(0, song.getSoutheastLiked());
+
+        assertEquals(0, song.getOutsideTotalLiked());
+        assertEquals(0, song.getOutsideLiked());
+
+        assertEquals(0, song.getUnitedstatesTotalLiked());
+        assertEquals(0, song.getUnitedstatesLiked());
+
+        // Heard
+        assertEquals(0, song.getNortheastTotalHeard());
+        assertEquals(0, song.getNortheastHeard());
+
+        assertEquals(0, song.getSoutheastTotalHeard());
+        assertEquals(0, song.getSoutheastHeard());
+
+        assertEquals(0, song.getOutsideTotalHeard());
+        assertEquals(0, song.getOutsideHeard());
+
+        assertEquals(0, song.getUnitedstatesTotalHeard());
+        assertEquals(0, song.getUnitedstatesHeard());
 
         // Song Information
         assertEquals("All You Need Is Love", song.getTitle());
@@ -80,7 +135,25 @@ public class SongTest extends TestCase {
         assertEquals(1, song.compareToGenre(song2));
         assertEquals(-1, song2.compareToGenre(song));
         assertEquals(0, song.compareToGenre(song));
-    }    
+    }  
+    
+    /**
+     * This method tests the compareToTitle methods for the song class. 
+     */
+    public void testCompareToYear() {
+        assertEquals(-1, song.compareToYear(song2));
+        assertEquals(1, song2.compareToYear(song));
+        assertEquals(0, song.compareToYear(song));
+    }
+
+    /**
+     * This method tests the compareToGenre method. 
+     */
+    public void testCompareToArtist() {
+        assertEquals(1, song.compareToArtist(song2));
+        assertEquals(-1, song2.compareToArtist(song));
+        assertEquals(0, song.compareToArtist(song));
+    }
 
     /**
      * Test heard and not heard methods in Song class. 
