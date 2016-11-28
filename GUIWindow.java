@@ -448,7 +448,11 @@ public class GUIWindow {
      */
     public void clickedNext(Button btn) {
         PAGE++;
-        if (PAGE == Math.ceil((int) songList.size() / 9.0) + 1) {
+        if (PAGE == Math.ceil((int) songList.size() / 9.0)) {
+            window.removeAllShapes();
+            legendMaker();
+            addGlyphs(PAGE, representation, songList);
+            prevButton.enable();
             btn.disable();
 
         } else {
@@ -465,7 +469,10 @@ public class GUIWindow {
      */
     public void clickedPrevious(Button btn) {
         PAGE--;
-        if (PAGE < 1) {
+        if (PAGE == 1) {
+            window.removeAllShapes();
+            legendMaker();
+            addGlyphs(PAGE, representation, songList);
             btn.disable();
         } else {
             window.removeAllShapes();
