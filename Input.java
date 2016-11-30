@@ -17,7 +17,7 @@ public class Input {
      * @param args
      *            The parameter for the main class.
      */
-    public Input(String music, String data) {
+    public Input(String data, String music) {
 
         try {
             songList = new SongList(music);
@@ -70,7 +70,8 @@ public class Input {
                 
                 int index = 0;
                 for (int i = 5; i < infoArray.length; i += 2) {
-                    if (hobby.equals("")) {
+                    if (hobby.equals("") || major.equals("") || 
+                        region.equals("")) {
                         i = infoArray.length;
                     } else {
                         if (infoArray[i].equals("Yes")) {
@@ -109,19 +110,6 @@ public class Input {
             details(songList.get(i));
 
         }
-    }
-
-    /**
-     * Prints the title, artist, genre and year of a given song.
-     * 
-     * @param song
-     *            is the song being printed to the console.
-     */
-    private void printSong(Song song) {
-        System.out.println("song title " + song.getTitle());
-        System.out.println("song artist " + song.getArtist());
-        System.out.println("song genre " + song.getGenre());
-        System.out.println("song year " + song.getYear());
     }
 
     /**
