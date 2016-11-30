@@ -180,11 +180,10 @@ public class SongTest extends TestCase {
     }
 
     /**
-     * Test heard and not heard methods in Song class. 
+     * Test heard and not heard methods in Song class for Art. 
      */
-    public void testHeard()
+    public void testHeardLikedArt()
     {
-        // Art
         song.notHeard("art", "Computer Science", "Northeast");
         assertEquals(1, song.getArtTotalHeard());
         assertEquals(1, song.getCsTotalHeard());
@@ -208,8 +207,13 @@ public class SongTest extends TestCase {
         assertEquals(1, song.getCsLiked());
         assertEquals(2, song.getNortheastTotalLiked());
         assertEquals(1, song.getNortheastLiked());
+    }
 
-        // Reading
+    /**
+     * Test heard and not heard methods in Song class for Reading. 
+     */
+    public void testHeardLikedReading() {
+        
         song.notHeard("reading", "Math or CMDA", "Southeast");
         assertEquals(1, song.getMathTotalHeard());
         assertEquals(1, song.getReadingTotalHeard());
@@ -233,8 +237,13 @@ public class SongTest extends TestCase {
         assertEquals(1, song.getMathLiked());
         assertEquals(2, song.getSoutheastTotalLiked());
         assertEquals(1, song.getSoutheastLiked());
-
-        // Sports
+    }
+        
+    /**
+     * Test heard and not heard methods in Song class for Sports. 
+     */
+    public void testHeardLikedSports() {
+        
         song.notHeard("sports", "Other Engineering",
                 "United States (other than Southeast or Northwest)");
         assertEquals(1, song.getSportsTotalHeard());
@@ -262,9 +271,13 @@ public class SongTest extends TestCase {
         assertEquals(1, song.getEngineeringLiked());
         assertEquals(2, song.getUnitedstatesTotalLiked());
         assertEquals(1, song.getUnitedstatesLiked());
-
+    }
         
-        // Music
+    /**
+     * Test heard and not heard methods in Song class for Art. 
+     */
+    public void testHeardLikedMusic() {
+            
         song.notHeard("music", "Other", "Outside of United States");
         assertEquals(1, song.getMusicTotalHeard());
         assertEquals(1, song.getOtherTotalHeard());
@@ -289,7 +302,13 @@ public class SongTest extends TestCase {
         assertEquals(2, song.getOutsideTotalLiked());
         assertEquals(1, song.getOutsideLiked());
 
-        // Default
+    }
+    
+    /**
+     * This tests the exceptions for the song class. 
+     */
+    public void testExceptions() {
+        
         try {
             song.heard("fishing", "swimming", "running");
         }
@@ -326,5 +345,48 @@ public class SongTest extends TestCase {
             assertTrue(e instanceof IllegalStateException);
         }
         
-    }
+    }    
+    
+    /**
+     * This tests the exceptions for the song class. 
+     */
+    public void testExceptions2() {
+        
+        try {
+            song.heard("art", "swimming", "running");
+        }
+        catch (Exception e)
+        {
+            assertNotNull(e);
+            assertTrue(e instanceof IllegalStateException);
+        }
+
+        try {
+            song.notHeard("art", "Computer Science", "running");
+        }
+        catch (Exception e)
+        {
+            assertNotNull(e);
+            assertTrue(e instanceof IllegalStateException);
+        }
+
+        try {
+            song.liked("art", "swimming", "running");
+        }
+        catch (Exception e)
+        {
+            assertNotNull(e);
+            assertTrue(e instanceof IllegalStateException);
+        }
+
+        try {
+            song.notLiked("art", "Computer Science", "running");
+        }
+        catch (Exception e)
+        {
+            assertNotNull(e);
+            assertTrue(e instanceof IllegalStateException);
+        }
+        
+    } 
 }
