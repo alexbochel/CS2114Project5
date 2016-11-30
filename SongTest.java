@@ -351,7 +351,7 @@ public class SongTest extends TestCase {
      * This tests the exceptions for the song class. 
      */
     public void testExceptions2() {
-        
+        //Heard
         try {
             song.heard("art", "swimming", "running");
         }
@@ -361,6 +361,25 @@ public class SongTest extends TestCase {
             assertTrue(e instanceof IllegalStateException);
         }
 
+        try {
+            song.heard("art", "Computer Science", "running");
+        }
+        catch (Exception e)
+        {
+            assertNotNull(e);
+            assertTrue(e instanceof IllegalStateException);
+        }
+        
+        //Not Heard
+        try {
+            song.notHeard("art", "swimming", "running");
+        }
+        catch (Exception e)
+        {
+            assertNotNull(e);
+            assertTrue(e instanceof IllegalStateException);
+        }
+        
         try {
             song.notHeard("art", "Computer Science", "running");
         }
@@ -379,6 +398,24 @@ public class SongTest extends TestCase {
             assertTrue(e instanceof IllegalStateException);
         }
 
+        try {
+            song.liked("art", "Computer Science", "running");
+        }
+        catch (Exception e)
+        {
+            assertNotNull(e);
+            assertTrue(e instanceof IllegalStateException);
+        }
+        
+        try {
+            song.notLiked("art", "swimming", "running");
+        }
+        catch (Exception e)
+        {
+            assertNotNull(e);
+            assertTrue(e instanceof IllegalStateException);
+        }
+        
         try {
             song.notLiked("art", "Computer Science", "running");
         }
